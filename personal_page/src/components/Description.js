@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Description = () => (
   <section className="container mt-5">
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hi, I'm Maksym Lan, a Computer Science student at the University of Manitoba. I'm passionate about developing innovative solutions and contributing to exciting projects.</p>
+    <h1>Welcome to My Personal Page</h1>
+    <p>Hi, I'm Maksym Lan, a Computer Science student at the University of Manitoba. I'm passionate about all areas of computer science with a particular emphasis on the AI and Machine Learning.</p>
     <p>
       <strong>Contact Information:</strong><br />
-      418, 29 Dysart Road, Winnipeg, MB R3T 2M7<br />
-      Phone: <a href="tel:+12045091227">+1(204)5091227</a><br />
-      Email: <a href="mailto:lanmaksym@gmail.com">lanmaksym@gmail.com</a><br />
+      Winnipeg, MB, Canada<br />
+     {//} Phone: <a href="tel:+12045091227">+1(204)5091227</a><br />
+     }Email: <a href="mailto:lanmaksym@gmail.com">lanmaksym@gmail.com</a><br />
       GitHub: <a href="https://github.com/MaxLan-dev" target="_blank" rel="noopener noreferrer">github.com/MaxLan-dev</a><br />
       LinkedIn: <a href="https://www.linkedin.com/in/maksym-lan/" target="_blank" rel="noopener noreferrer">linkedin.com/in/maksym-lan</a>
     </p>

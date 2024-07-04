@@ -30,3 +30,7 @@ a:hover {
 .btn {
   margin-top: 10px;
 }
+
+.btn-secondary {
+  margin-left: 10px;
+}
