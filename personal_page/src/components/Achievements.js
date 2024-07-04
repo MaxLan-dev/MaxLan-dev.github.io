@@ -1,11 +1,55 @@
 import React from 'react';
 
 const achievements = [
+ 
   {
-    title: 'First Place in Hackathon',
-    description: 'Led a team of four to develop an innovative solution that won first place in the XYZ Hackathon.'
+    title: 'Participation in the Future of Ukraine Competition',
+    description: 'Issued by Future of Ukraine · Feb 2022'
   },
-  // Add more achievements as needed
+  {
+    title: 'Participation in the Future of Ukraine Competition',
+    description: 'Issued by Future of Ukraine · Oct 2020'
+  },
+  {
+    title: 'Projects Competition 1st Place',
+    description: 'Issued by Sahasak Nimavum · Sep 2020'
+  },
+  {
+    title: 'Projects Competition 2nd Place',
+    description: 'Issued by iCan Canada · Aug 2020'
+  },
+  {
+    title: 'Projects Competition 3rd Place',
+    description: 'Issued by Intarg Poland · Jun 2020'
+  },
+  {
+    title: '4th Place ISEF 2020',
+    description: 'Issued by ISEF Ukriane · Feb 2020'
+  },
+  {
+    title: 'Competition Defense 1st Place',
+    description: 'Issued by Junior Academy of Sciences of Ukraine (Lviv Region) · Feb 2020'
+  },
+  {
+    title: 'Participant in Innovation Market 2019',
+    description: 'Issued by Innovation Market · Nov 2019'
+  },
+  {
+    title: 'Participation BoitechCon',
+    description: 'Issued by BiotechCon · Jun 2019'
+  },
+  {
+    title: 'Competition Defense 3rd Place',
+    description: 'Issued by Junior Academy of Sciences of Ukraine · May 2019'
+  },
+  {
+    title: 'Competition Defense 1st Place',
+    description: 'Issued by Junior Academy of Sciences of Ukraine (Lviv Region) · Feb 2019'
+  },
+  {
+    title: 'Competition Defense 3rd Place',
+    description: 'Issued by Junior Academy of Sciences of Ukraine (Lviv Region) · Feb 2018'
+  }
 ];
 
 const Achievements = () => (
