@@ -5,13 +5,10 @@ const Resume = () => (
     <h2>My Resume</h2>
     <p>Here you can view or download my resume:</p>
     <div>
-      {/* Option 1: Embed PDF directly */}
-      {/* Replace '/path/to/Maksym_Lan_Resume.pdf' with your actual PDF file path */}
-      <embed src="c:\Users\vvede\Downloads\Maksym_Lan_Resume (5).pdf" type="application/pdf" width="100%" height="600px" />
+      {/* fix the link to the raw one*/}
+      <embed src="https://github.com/MaxLan-dev/MaxLan-dev.github.io/blob/main/personal_page/public/Maksym_Lan_Resume.pdf" type="application/pdf" width="100%" height="600px" />
     </div>
-    {/* Option 2: Link to PDF */}
-    {/* Replace '/path/to/Maksym_Lan_Resume.pdf' with your actual PDF file path */}
-    <a href="c:\Users\vvede\Downloads\Maksym_Lan_Resume (5).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-3">
+    <a href="https://github.com/MaxLan-dev/MaxLan-dev.github.io/blob/main/personal_page/public/Maksym_Lan_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-3">
       View Resume (PDF)
     </a>
   </section>
