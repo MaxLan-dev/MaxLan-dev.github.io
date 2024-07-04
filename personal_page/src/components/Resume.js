@@ -11,9 +11,9 @@ const Resume = () => (
     </div>
     {/* Option 2: Link to PDF */}
     {/* Replace '/path/to/Maksym_Lan_Resume.pdf' with your actual PDF file path */}
-    {/*<a href="/path/to/Maksym_Lan_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-3">
+    <a href="c:\Users\vvede\Downloads\Maksym_Lan_Resume (5).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-3">
       View Resume (PDF)
-    </a>*/}
+    </a>
   </section>
 );
 
