@@ -1,2 +1,2 @@
-# MaksymLanwebpage
-Personal webiste
+# Maksym Lan webpage
+Personal website
