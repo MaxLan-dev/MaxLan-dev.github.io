@@ -1,8 +1,7 @@
 import React from 'react';
 
 const projects = [
-  
-    {
+  {
     title: 'Cookbot',
     description: 'Create a discord and telegram bot that uses the Chat GPT API to help users find recipes based on the ingredients they have. The bot also provides the user with a list of ingredients they need to buy to make the recipe.',
     link: 'https://github.com/MaxLan-dev/Cookbot'
@@ -20,7 +19,7 @@ const projects = [
   {
     title: 'Maximum masses of neutron stars',
     description: 'Analyse the data collected from recent years, create a mass distribution and analyze the new data’s effects on the kernel probability density.',
-   // link: 'https://github.com/MaxLan-dev/Research_project'
+    // link: 'https://github.com/MaxLan-dev/Research_project'
   }
 ];
 
@@ -32,9 +31,11 @@ const Projects = () => (
         <li key={index} className="mb-4">
           <h3>{project.title}</h3>
           <p>{project.description}</p>
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            View on GitHub
-          </a>
+          {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              View on GitHub
+            </a>
+          )}
         </li>
       ))}
     </ul>
