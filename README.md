@@ -47,7 +47,7 @@ Analyze the data collected from recent years, create a mass distribution, and an
 ## Contact
 
 - Email: lanmaksym@gmail.com
-- LinkedIn: "https://www.linkedin.com/in/maksym-lan
+- LinkedIn: https://www.linkedin.com/in/maksym-lan
 - Personal Website: https://maxlan-dev.github.io
 
 ---
