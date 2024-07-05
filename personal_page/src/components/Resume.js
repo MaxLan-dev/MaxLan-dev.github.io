@@ -5,7 +5,6 @@ const Resume = () => (
     <h2>My Resume</h2>
     <p>Here you can view or download my resume:</p>
     <div>
-      {/* fix the link to the raw one*/}
       <embed src="https://github.com/MaxLan-dev/MaxLan-dev.github.io/blob/main/personal_page/public/Maksym_Lan_Resume.pdf" type="application/pdf" width="100%" height="600px" />
     </div>
     <a href="https://github.com/MaxLan-dev/MaxLan-dev.github.io/blob/main/personal_page/public/Maksym_Lan_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-3">
