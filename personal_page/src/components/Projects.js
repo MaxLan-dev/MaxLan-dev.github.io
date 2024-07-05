@@ -22,7 +22,6 @@ const projects = [
     // link: 'https://github.com/MaxLan-dev/Research_project'
   }
 ];
-
 const Projects = () => (
   <section className="container mt-5">
     <h2>My Projects</h2>
@@ -43,3 +42,5 @@ const Projects = () => (
 );
 
 export default Projects;
+
+

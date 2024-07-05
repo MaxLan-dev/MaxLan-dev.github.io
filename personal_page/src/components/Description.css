@@ -1,5 +1,5 @@
 .custom-btn {
-  background-color: #6c757d; /* Gray color */
+  background-color: #6c757d;
   border-color: #6c757d;
   color: white;
   font-weight: bold;
@@ -13,7 +13,7 @@
 }
 
 .custom-btn:hover {
-  background-color: #5a6268; /* Darker gray */
+  background-color: #5a6268;
   border-color: #5a6268;
   color: white;
 }
