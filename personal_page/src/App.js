@@ -6,6 +6,7 @@ import Resume from './components/Resume';
 import Experience from './components/Experience';
 import Achievements from './components/Achievements';
 import DarkModeToggle from './DarkModeToggle';
+import './theme.css';
 
 const App = () => (
   <Router>
@@ -30,6 +31,13 @@ const App = () => (
       <Route path="/achievements" element={<Achievements />} />
     </Routes>
     <footer className="footer">
+      <ul>
+        <li><Link to="/">Description</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
+        <li><Link to="/resume">Resume</Link></li>
+        <li><Link to="/experience">Experience</Link></li>
+        <li><Link to="/achievements">Achievements</Link></li>
+      </ul>
       <small>
         <a href="https://github.com/MaxLan-dev" target="_blank" rel="noopener noreferrer">GitHub</a> • 
         <a href="https://www.linkedin.com/in/maksym-lan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

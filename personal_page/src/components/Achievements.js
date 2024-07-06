@@ -1,7 +1,7 @@
 import React from 'react';
+import './Achievements.css';
 
 const achievements = [
- 
   {
     title: 'Participation in the Future of Ukraine Competition',
     description: 'Issued by Future of Ukraine · Feb 2022'
@@ -24,7 +24,7 @@ const achievements = [
   },
   {
     title: '4th Place ISEF 2020',
-    description: 'Issued by ISEF Ukriane · Feb 2020'
+    description: 'Issued by ISEF Ukraine · Feb 2020'
   },
   {
     title: 'Competition Defense 1st Place',
@@ -53,11 +53,11 @@ const achievements = [
 ];
 
 const Achievements = () => (
-  <section className="container mt-5">
+  <section className="container achievements-container">
     <h2>My Achievements</h2>
     <ul className="list-unstyled">
       {achievements.map((achievement, index) => (
-        <li key={index} className="mb-4">
+        <li key={index} className="achievement-box">
           <h3>{achievement.title}</h3>
           <p>{achievement.description}</p>
         </li>
@@ -65,6 +65,5 @@ const Achievements = () => (
     </ul>
   </section>
 );
-
 
 export default Achievements;
