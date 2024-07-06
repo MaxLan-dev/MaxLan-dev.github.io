@@ -1,4 +1,5 @@
 import React from 'react';
+import './Experience.css';
 
 const experiences = [
   {
@@ -32,21 +33,21 @@ const experiences = [
     description: 'Lviv, Ukraine · On-site Founder, CEO, and company representative of Startup SorbMax, the startup that produces a new type of biodegradable filters for industries. Skills: Project Management · Analytical Skills · Methods Engineering · Team Leadership · CEO · LaTeX · Event Planning · Public Speaking',
   },
 ];
-const Experience = () => (
-    <section className="container mt-5">
-      <h2>My Experience</h2>
-      <ul className="list-unstyled">
-        {experiences.map((experience, index) => (
-          <li key={index} className="mb-4">
-            <h3>{experience.title}</h3>
-            <p><strong>Company:</strong> {experience.company}</p>
-            <p><strong>Period:</strong> {experience.period}</p>
-            <p>{experience.description}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-  
 
-  export default Experience;
+const Experience = () => (
+  <section className="container experience-container">
+    <h2>My Experience</h2>
+    <ul className="list-unstyled">
+      {experiences.map((experience, index) => (
+        <li key={index} className="experience-box">
+          <h3>{experience.title}</h3>
+          <p><strong>Company:</strong> {experience.company}</p>
+          <p><strong>Period:</strong> {experience.period}</p>
+          <p>{experience.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+);
+
+export default Experience;

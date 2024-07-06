@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './theme.css';
 
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -17,9 +18,11 @@ const DarkModeToggle = () => {
   }, [darkMode]);
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)}>
-      Switch to {darkMode ? 'Light' : 'Dark'} Mode
-    </button>
+    <div className="switch-container">
+      <button onClick={() => setDarkMode(!darkMode)}>
+        Switch to {darkMode ? 'Light' : 'Dark'} Mode
+      </button>
+    </div>
   );
 };
 
