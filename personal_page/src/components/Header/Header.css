@@ -1,0 +1,75 @@
+/* src/components/Header/Header.module.css */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff;
+    text-decoration: none;
+  
+    &:hover {
+      color: #0056b3;
+    }
+  }
+  
+  .mobileMenuButton {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+  
+    @media (max-width: 768px) {
+      display: block; /* Show on mobile */
+    }
+  }
+  
+  .navLinks {
+    display: flex;
+  }
+  
+  .navLink {
+    color: #333;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: #007bff;
+    }
+  
+     @media (max-width: 768px) {
+      /* margin-left: .5rem; Adjust for mobile */
+      /* margin-bottom: .5rem; Space between links */
+      display:block; /* Stack links vertically */
+     }
+  }
+  
+  .open {
+     display:flex; /* Show links when menu is open */
+     flex-direction: column; /* Stack vertically */
+     position:absolute; /* Position relative to parent */
+     top:100%; /* Below the header */
+     left:0; 
+     right:0; 
+     background-color:#fff; /* Background for dropdown */
+     box-shadow:0px -2px -4px rgba(0,0,0,.1); /* Shadow for dropdown */
+  }

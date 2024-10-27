@@ -1,36 +1,92 @@
+/* App.css */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .container {
-  background-color: #fff;
-  padding: 20px;
+  background-color: var(--container-bg);
+  padding: 30px;
   margin-top: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px var(--shadow-color);
 }
 
 h1, h2, h3 {
-  color: #333;
+  color: var(--heading-color);
+  margin-bottom: 15px;
 }
 
 p {
-  color: #666;
+  color: var(--text-color);
+  margin-bottom: 20px;
 }
 
 a {
-  color: #007bff;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--link-hover-color);
 }
 
 .btn {
+  display: inline-block;
+  padding: 10px 20px;
   margin-top: 10px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover-bg);
 }
 
 .btn-secondary {
   margin-left: 10px;
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--btn-secondary-hover-bg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .btn, .btn-secondary {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
