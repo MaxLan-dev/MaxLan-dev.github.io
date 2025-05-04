@@ -1,10 +1,11 @@
 .header {
   background-color: var(--header-bg);
-  padding: 1.5rem 2rem;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav {
@@ -16,10 +17,11 @@
 }
 
 .logo {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .logo:hover {
@@ -28,15 +30,16 @@
 
 .navLinks {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .navLink {
   color: var(--text-color);
   text-decoration: none;
+  font-size: 0.95rem;
   font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .navLink:hover {
@@ -47,9 +50,10 @@
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+  font-size: 1.25rem;
   color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 @media (max-width: 768px) {
@@ -61,12 +65,14 @@
     left: 0;
     right: 0;
     background-color: var(--header-bg);
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     box-shadow: 0 4px 8px var(--shadow-color);
+    transition: background-color 0.3s ease;
   }
 
   .navLinks.open {
     display: flex;
+    gap: 1rem;
   }
 
   .mobileMenuButton {
@@ -74,6 +80,7 @@
   }
 
   .navLink {
-    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    font-size: 1rem;
   }
 }
