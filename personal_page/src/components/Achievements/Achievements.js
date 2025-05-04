@@ -3,6 +3,31 @@ import styles from './Achievements.module.css';
 
 const achievements = [
   {
+    title: 'Dean\'s Honour List',
+    description: 'Issued by Unversity of Manitoba · May 2025',
+    icon: '🏆'
+  },
+  {
+    title: 'Dean\'s Honour List',
+    description: 'Issued by Unversity of Manitoba · Jan 2025',
+    icon: '🏆'
+  },
+  {
+    title: 'Dean\'s Honour List',
+    description: 'Issued by Unversity of Manitoba · Aug 2024',
+    icon: '🏆'
+  },
+  {
+    title: 'Dean\'s Honour List',
+    description: 'Issued by Unversity of Manitoba · May 2024',
+    icon: '🏆'
+  },
+  {
+    title: 'Dean\'s Honour List',
+    description: 'Issued by Unversity of Manitoba · Jan 2024',
+    icon: '🏆'
+  },
+  {
     title: 'Participation in the Future of Ukraine Competition',
     description: 'Issued by Future of Ukraine · Feb 2022',
     icon: '🏆'

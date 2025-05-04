@@ -58,7 +58,7 @@ const education = {
     {
       title: 'Dean’s Honour List',
       description: [
-        'Received for exceptional academic standing in Jan 2024, May 2024, Aug 2024, Dec 2024 and Apr 2025.',
+        'Received for exceptional academic standing in Jan 2024, May 2024, Aug 2024, Jan 2025 and May 2025.',
         'Recognized for maintaining a GPA of 3.92/4.5 across rigorous coursework.'
       ]
     }
