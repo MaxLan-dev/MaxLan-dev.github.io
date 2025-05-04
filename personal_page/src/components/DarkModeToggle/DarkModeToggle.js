@@ -1,13 +1,18 @@
 import React from 'react';
+import styles from './DarkModeToggle.module.css';
 
 const DarkModeToggle = ({ darkMode, setDarkMode }) => {
   return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="fixed top-4 right-4 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white p-2 rounded-full"
-    >
-      {darkMode ? '🌞' : '🌙'}
-    </button>
+    <div className={styles.switchContainer}>
+      <label className={styles.switch}>
+        <input
+          type="checkbox"
+          checked={darkMode}
+          onChange={() => setDarkMode(!darkMode)}
+        />
+        <span className={styles.slider}></span>
+      </label>
+    </div>
   );
 };
 

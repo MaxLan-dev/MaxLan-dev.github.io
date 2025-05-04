@@ -13,15 +13,15 @@ const App = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle('dark', darkMode);
+    document.body.classList.toggle('dark-mode', darkMode);
   }, [darkMode]);
 
   return (
     <Router>
-      <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
+      <div className="min-h-screen flex flex-col">
         <Header darkMode={darkMode} />
         <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-        <main className="container mx-auto px-4 py-8">
+        <main className="flex-grow container">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />

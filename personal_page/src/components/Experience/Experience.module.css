@@ -1,0 +1,119 @@
+.experienceContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+.experienceBox {
+  background-color: var(--container-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  width: calc(50% - 2rem);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.experienceBox:hover {
+  transform: translateY(-5px);
+}
+
+.experienceBox:nth-child(odd) {
+  left: 0;
+}
+
+.experienceBox:nth-child(even) {
+  left: calc(50% + 2rem);
+}
+
+.experienceBox::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  top: 1.5rem;
+}
+
+.experienceBox:nth-child(odd)::before {
+  right: -38px;
+}
+
+.experienceBox:nth-child(even)::before {
+  left: -38px;
+}
+
+.experienceTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.experienceCompany, .experiencePeriod, .experienceLocation {
+  font-size: 0.875rem;
+  color: var(--secondary-text);
+  margin-bottom: 0.5rem;
+}
+
+.experienceDescription {
+  font-size: 0.875rem;
+  color: var(--secondary-text);
+  margin-top: 1rem;
+}
+
+.skillsTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skillTag {
+  background-color: var(--border-color);
+  color: var(--secondary-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .experienceBox {
+    width: calc(100% - 40px);
+    left: 40px !important;
+  }
+
+  .experienceBox::before {
+    left: -28px !important;
+  }
+}
