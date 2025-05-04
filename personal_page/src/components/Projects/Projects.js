@@ -4,24 +4,48 @@ import styles from './Projects.module.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const projects = [
   {
+    title: 'Winnipeg Public Transit Improvements Map',
+    description: 'A data visualization of the areas with the enhacments in the Winnipeg public transit system required based on public data.',
+    period: 'March 2025 - April 2025',
+    association: 'DataThon 2025',
+    skills: ['Software Development', 'Project Management', 'Python', 'Django', 'Data Analysis', 'Data Science', 'Data Visualizations', 'Open data analysis', 'Team Leadership', "GitHub"],
+    link: 'https://github.com/MaxLan-dev/Datathon' 
+  },
+  {
+    title: 'Food4U platform',
+    description: 'A platform that connects farmers with small businesses in Winnipeg, allowing users to order food from local farmers.',
+    period: 'Feb 2025 - Mar 2025',
+    association: '.DevHacks2025',
+    skills: ['Software Development', 'Project Management', 'Python', 'Django', 'HTML', 'CSS', 'Team Leadership', "GitHub", 'Software Design'],
+    link: 'https://github.com/MaxLan-dev/DevHacks2025' 
+  },
+  {
     title: 'NASA Space App Challenge Project',
     description: 'An app that shows the exoplanets that should be observed first by the new Habitable Worlds Observatory.',
-    period: 'Oct 2024 - Present',
-    association: 'University of Manitoba',
-    skills: ['Software Development', 'Project Management', 'Python', 'Django', 'Data Analysis'],
-    link: '#' // Add actual link when available
+    period: 'Oct 2024 - Nov 2024',
+    association: 'NASA Space Apps Challenge',
+    skills: ['Software Development', 'Project Management', 'Python', 'Django', 'Numpy', 'Pandas' , 'Data Analysis', 'Team Leadership', "GitHub"],
+    link: 'https://github.com/alex-and-ye/NASA-SPACE-APPS-PROJECT' 
   },
   {
     title: 'Personal Website',
-    description: 'My personal website, a work in progress.',
+    description: 'My portfolio website, you are currently on it.',
     period: 'Jul 2024 - Present',
-    skills: ['React.js', 'Software Development', 'Computer Science', 'JavaScript', 'GitHub'],
-    link: '#' // Add actual link when available
+    skills: ['React.js', 'Software Development', 'JavaScript', 'GitHub', 'Tailwind CSS', 'Node.js'],
+    link: 'https://maxlan-dev.github.io' 
+  },
+  {
+    title: 'Discord GPTBot',
+    description: 'A Discord bot that uses OpenAI API to provide answers to user questions.',
+    period: 'Feb 2023 - Mar 2023',
+    association: '.DevHacks2023',
+    skills: ['Software Development', 'Team Collaboration', 'React.js', 'Development', 'JavaScript', 'GitHub', 'Node.js' , 'API'],
+    link: 'https://github.com/DenysPopov-dp/UM2023hack' 
   },
   {
     title: 'React Chat App',
     description: 'A simple react chat application.',
-    period: 'Jan 2023',
+    period: 'Jan 2023- Feb 2023',
     skills: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js'],
     link: 'https://github.com/MaxLan-dev/Chat_app'
   },
@@ -39,7 +63,7 @@ const projects = [
     period: 'Apr 2020 - Jan 2021',
     association: 'Prowir',
     skills: ['CEO', 'CSS', 'Node.js', 'JavaScript', 'HTML', 'Project Management'],
-    link: '#' // Add actual link if available
+    link: 'https://prowircontacts.wixsite.com/prowir' 
   },
   {
     title: 'Maximum masses of neutron stars',
