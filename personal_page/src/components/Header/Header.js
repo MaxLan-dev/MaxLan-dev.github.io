@@ -22,10 +22,13 @@ const Header = ({ darkMode }) => {
             <Link to="/" className={styles.navLink}>Home</Link>
           </li>
           <li>
+            <Link to="/experience" className={styles.navLink}>Experience</Link>
+          </li>
+          <li>
             <Link to="/projects" className={styles.navLink}>Projects</Link>
           </li>
           <li>
-            <Link to="/experience" className={styles.navLink}>Experience</Link>
+            <Link to="/education" className={styles.navLink}>Education</Link>
           </li>
           <li>
             <Link to="/achievements" className={styles.navLink}>Achievements</Link>

@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Projects from './components/Projects/Projects';
 import Experience from './components/Experience/Experience';
 import Achievements from './components/Achievements/Achievements';
+import Education from './components/Education/Education';
 import Resume from './components/Resume/Resume';
 import Footer from './components/Footer/Footer';
 import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle';
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/education" element={<Education />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/resume" element={<Resume />} />
           </Routes>

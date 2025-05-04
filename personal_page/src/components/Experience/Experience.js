@@ -29,7 +29,7 @@ const experiences = [
       'Led the design and development of the startup’s MVP, overseeing all phases from concept to implementation.',
       'Built a scalable SaaS solution using modern web technologies to streamline order aggregation and processing.'
     ].join('\n'),
-    skills: ['Django', 'JavaScript', 'SaaS', 'Web Development', 'Leadership', 'HTML', 'CSS', 'Python', 'AI']
+    skills: ['Django', 'JavaScript', 'SaaS', 'Full Stack Development', 'Leadership', 'HTML', 'CSS', 'Python', 'AI']
   },
   {
     title: 'AI Software Developer Intern (Term 2)',
@@ -49,7 +49,7 @@ const experiences = [
       'Enabled access to a 100GB database, achieving 99.98% accuracy for the startup’s MVP.',
       'Designed responsive front-end and back-end components to support real-time agricultural data interactions.'
     ].join('\n'),
-    skills: ['Python', 'Django', 'SQLite', 'Llama-index', 'Qdrant', 'HTML', 'CSS', 'LLMs', 'Web Development', 'JavaScript']
+    skills: ['Python', 'Django', 'SQLite', 'Llama-index', 'Qdrant', 'HTML', 'CSS', 'LLMs', 'Full Stack Development', 'JavaScript']
   },
   {
     title: 'Vice President',

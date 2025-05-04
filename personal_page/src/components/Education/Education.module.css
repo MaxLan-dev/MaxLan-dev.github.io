@@ -1,0 +1,284 @@
+.educationContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    background-color: var(--container-bg);
+    transition: background-color 0.3s ease;
+  }
+  
+  .pageTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .educationCard {
+    background-color: var(--container-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .educationCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+  }
+  
+  .sectionIcon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: color 0.3s ease;
+  }
+  
+  .sectionTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .educationDetails {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--secondary-text);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .subTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 1.5rem 0 0.75rem;
+    transition: color 0.3s ease;
+  }
+  
+  .courseworkCategory {
+    margin-bottom: 1.5rem;
+  }
+  
+  .courseworkList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .courseworkItem {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    position: relative;
+    padding-left: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .courseworkItem::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .achievement {
+    margin-bottom: 1.5rem;
+  }
+  
+  .achievementTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .starIcon {
+    font-size: 1rem;
+    color: var(--accent);
+    transition: color 0.3s ease;
+  }
+  
+  .achievementList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .achievementItem {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .achievementItem::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .club {
+    margin-bottom: 1.5rem;
+  }
+  
+  .clubTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+  }
+  
+  .clubDetails {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .clubList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .clubItem {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .clubItem::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .event {
+    margin-bottom: 1.5rem;
+  }
+  
+  .eventTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+  }
+  
+  .eventDetails {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .eventList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .eventItem {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .eventItem::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .educationContainer {
+      padding: 1.5rem 1rem;
+    }
+  
+    .pageTitle {
+      font-size: 2rem;
+    }
+  
+    .educationCard {
+      padding: 1rem;
+    }
+  
+    .sectionTitle {
+      font-size: 1.5rem;
+    }
+  
+    .educationDetails {
+      font-size: 0.9rem;
+    }
+  
+    .courseworkList {
+      grid-template-columns: 1fr;
+    }
+  
+    .courseworkItem,
+    .achievementItem,
+    .clubItem,
+    .eventItem {
+      font-size: 0.85rem;
+      padding-left: 1.25rem;
+    }
+  
+    .subTitle {
+      font-size: 1.1rem;
+    }
+  
+    .clubTitle,
+    .eventTitle,
+    .achievementTitle {
+      font-size: 1rem;
+    }
+  }

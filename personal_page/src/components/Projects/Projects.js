@@ -20,6 +20,14 @@ const projects = [
     link: 'https://github.com/MaxLan-dev/DevHacks2025' 
   },
   {
+    title: 'Calorie Tracker',
+    description: 'Android app that allows users to track their calories and exercise daily and build their meal and exercise plans.',
+    period: 'Jan 2025 - Apr 2025',
+    association: 'University of Manitoba',
+    skills: ['Software Development', 'Project Management', 'Java', 'Android', 'Team Leadership', "HSQLDB", "GitLab", 'Software Design', 'Software Testing'],
+    link: 'https://github.com/MaxLan-dev/COMP3350-WEBSITE' 
+  }, 
+  {
     title: 'NASA Space App Challenge Project',
     description: 'An app that shows the exoplanets that should be observed first by the new Habitable Worlds Observatory.',
     period: 'Oct 2024 - Nov 2024',
@@ -32,7 +40,7 @@ const projects = [
     description: 'My portfolio website, you are currently on it.',
     period: 'Jul 2024 - Present',
     skills: ['React.js', 'Software Development', 'JavaScript', 'GitHub', 'Tailwind CSS', 'Node.js'],
-    link: 'https://maxlan-dev.github.io' 
+    link: 'https://github.com/MaxLan-dev/MaxLan-dev.github.io' 
   },
   {
     title: 'Discord GPTBot',
@@ -71,7 +79,7 @@ const projects = [
     period: 'Nov 2019 - Dec 2020',
     association: 'Junior Academy of Sciences',
     skills: ['Computer Science', 'Python', 'Astrophysics', 'Research', 'LaTeX', 'Statistics'],
-    link: '#' // Add actual link if available
+    link: '#' 
   },
   {
     title: 'Startup SorbMax',
@@ -79,7 +87,7 @@ const projects = [
     period: 'Jan 2019 - Dec 2019',
     association: 'SorbMax',
     skills: ['CEO', 'Project Management', 'Team Leadership', 'Public Speaking'],
-    link: '#' // Add actual link if available
+    link: '#' 
   },
   {
     title: 'Planet X',
@@ -87,7 +95,7 @@ const projects = [
     period: 'Sep 2018 - May 2019',
     association: 'Junior Academy of Sciences',
     skills: ['Astrophysics', 'Research', 'Data Analysis', 'LaTeX'],
-    link: '#' // Add actual link if available
+    link: '#' 
   },
   {
     title: 'Morphological Classification of Galaxies',
@@ -95,7 +103,7 @@ const projects = [
     period: 'Sep 2017 - Mar 2018',
     association: 'Junior Academy of Sciences',
     skills: ['Astrophysics', 'Research', 'Data Analysis', 'LaTeX'],
-    link: '#' // Add actual link if available
+    link: '#' 
   }
 ];
 

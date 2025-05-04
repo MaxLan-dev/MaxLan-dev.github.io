@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useAnimation } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp, FaCode, FaGraduationCap, FaBriefcase, FaUser } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp, FaCode, FaGraduationCap, FaBriefcase, FaUser, FaTrophy } from 'react-icons/fa';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -44,7 +44,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Welcome to My Portfolio
+            Welcome to My Personal Page
           </motion.h1>
           <motion.p
             className={styles.subtitle}
@@ -52,29 +52,36 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            Maksym Lan - Computer Science Student | AI & ML Enthusiast
+            Maksym Lan - Computer Science Student | AI, ML & Full Stack Developer
           </motion.p>
           <div className={styles.buttonContainer}>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link to="/experience" className={styles.heroButton}>
+                <FaBriefcase /> View Experience
+              </Link>
+            </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link to="/projects" className={styles.heroButton}>
                 <FaCode /> View Projects
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/resume" className={styles.heroButton}>
-                <FaBriefcase /> View Resume
+              <Link to="/education" className={styles.heroButton}>
+                <FaGraduationCap /> View Education
               </Link>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/experience" className={styles.heroButton}>
-                <FaBriefcase /> View Experience
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link to="/achievements" className={styles.heroButton}>
-                <FaGraduationCap /> View Achievements
+                <FaTrophy /> View Achievements
               </Link>
             </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link to="/resume" className={styles.heroButton}>
+                <FaUser /> View Resume
+              </Link>
+            </motion.div>
+
+
           </div>
         </div>
       </motion.section>
@@ -90,10 +97,14 @@ const Home = () => {
         <FaUser className={styles.sectionIcon} />
         <h2 className={styles.sectionTitle}>About Me</h2>
         <p className={styles.sectionText}>
-          Hi, I'm Maksym Lan, a dedicated Computer Science student at the University of Manitoba. My passion lies in Artificial Intelligence (AI), Machine Learning (ML), and Large Language Models (LLMs). I focus on leveraging these technologies to enhance and innovate current products, aiming to solve real-world problems through cutting-edge solutions.
+          I'm Maksym(Max) Lan, a Computer Science student and about to be a graduate at the University of Manitoba, minoring in Mathematics and Statistics.
+          My passion lies in Machine Learning (ML), and I am excited to apply the university and work knowldge on real world probelms. 
+          I am a co-founder and a CEO of GroupBuy, student and a summer researcher at the UoM, developer at Resilient AG and executive of the UMAI and UMPPC, as well as a former CEO of Prowir and SorbMax. 
+          I’ve built AI-powered platforms and SaaS applications for startups and I am eager to gain more knowldge in future.
         </p>
         <p className={styles.sectionText}>
-          I thrive in collaborative environments and have experience spanning web development, machine learning, and scientific research. My goal is to create innovative, user-friendly solutions at the intersection of technology and human-centric design.
+          With my old passion and research background in astrophysics as well as my current leadership roles, I love to work in collaborative environments,
+          mixing knowldge and creative problem-solving. Check out my projects and experiences to see my work in action!
         </p>
       </motion.section>
 
@@ -111,40 +122,47 @@ const Home = () => {
           <div className={styles.skillCategory}>
             <h3>Programming Languages</h3>
             <ul className={styles.skillList}>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
               <li>Python</li>
-              <li>SQL</li>
-              <li>C/C++</li>
+              <li>JavaScript</li>
               <li>Java</li>
               <li>R</li>
+              <li>TypeScript</li>
+              <li>SQL</li>
+              <li>C++</li>
             </ul>
           </div>
           <div className={styles.skillCategory}>
-            <h3>Frameworks/Libraries</h3>
+            <h3>AI/ML Tools</h3>
             <ul className={styles.skillList}>
-              <li>React</li>
-              <li>Redux</li>
-              <li>Bootstrap</li>
               <li>TensorFlow</li>
+              <li>Keras</li>
               <li>PyTorch</li>
+              <li>Llama-index</li>
+              <li>LangChain</li>
+              <li>Qdrant</li>
               <li>NumPy</li>
-              <li>MatPlotLib</li>
+              <li>Pandas</li>
             </ul>
           </div>
           <div className={styles.skillCategory}>
-            <h3>Tools</h3>
+            <h3>Full Stack Skills</h3>
+            <ul className={styles.skillList}>
+              <li>Django</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>SQLAlchemy</li>
+              <li>HTML/CSS</li>
+              <li>Tailwind CSS</li>
+              <li>Redux</li>
+            </ul>
+          </div>
+          <div className={styles.skillCategory}>
+            <h3>Tools & Soft Skills</h3>
             <ul className={styles.skillList}>
               <li>Git</li>
-              <li>Visual Studio Code</li>
-              <li>Linux (Bash/Zsh)</li>
-              <li>LaTeX (Overleaf/R Markdown)</li>
-            </ul>
-          </div>
-          <div className={styles.skillCategory}>
-            <h3>Soft Skills</h3>
-            <ul className={styles.skillList}>
-              <li>Time Management</li>
+              <li>Docker</li>
+              <li>Linux</li>
+              <li>LaTeX</li>
               <li>Leadership</li>
               <li>Teamwork</li>
               <li>Problem-solving</li>
@@ -164,10 +182,10 @@ const Home = () => {
         <FaGraduationCap className={styles.sectionIcon} />
         <h2 className={styles.sectionTitle}>Education</h2>
         <div className={styles.educationItem}>
-          <h3>Bachelor of Computer Science</h3>
-          <p className={styles.educationDetails}>University of Manitoba</p>
+          <h3>Bachelor of Computer Science, Minor in Mathematics and Statistics</h3>
+          <p className={styles.educationDetails}>University of Manitoba, Winnipeg, MB | Jan 2023 – Aug 2025</p>
           <p className={styles.sectionText}>
-            Relevant Coursework: Data Structures and Algorithms, Computer Organization, Statistics and Computing, Programming Practices, Operating Systems
+            GPA: 3.92/4.5 (Current) | Completed a 4 year degree in 2.5 years by taking 6+ courses a term, mastering AI, ML, and software engineering.
           </p>
         </div>
       </motion.section>
@@ -183,7 +201,12 @@ const Home = () => {
         <FaBriefcase className={styles.sectionIcon} />
         <h2 className={styles.sectionTitle}>Professional Experience</h2>
         <p className={styles.sectionText}>
-          I have held positions in both academic and industry settings, applying my technical skills to develop robust software solutions. My roles have included student researcher and CEO/developer in various projects, giving me a well-rounded perspective on technology development and implementation.
+          Despite relative start of my career, I have already gained quite a bit of a software developement experience, primarily Full Stack and working on various AI focues
+          applications.
+          I am currently working as both a summer researcher at the University of Manitoba, and a software developer at Resilient AG, where I am involved in developing AI-based platforms.
+          I am also a co-founder and a CEO of GroupBuy, a SaaS platform for small food businesses, where I am responsible for leading the development of the platform and managing the team.
+          Prior to coming to Canada, I was a CEO of Prowir and SorbMax, where I led the development of a new wireless charger type and a startup focused on biodegradable filters, respectively.
+          Check out my experience section for more details on my work.
         </p>
         <Link to="/experience" className={styles.sectionButton}>View Full Experience</Link>
       </motion.section>
@@ -200,6 +223,7 @@ const Home = () => {
         <h2 className={styles.sectionTitle}>Contact Information</h2>
         <div className={styles.contactGrid}>
           <p className={styles.contactItem}>Winnipeg, MB, Canada</p>
+          <p className={styles.contactItem}>Phone: +1 204 509 1227</p>
           <p className={styles.contactItem}>
             Email: <a href="mailto:lanmaksym@gmail.com" className={styles.contactLink}>lanmaksym@gmail.com</a>
           </p>
