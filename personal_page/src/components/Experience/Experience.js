@@ -8,7 +8,7 @@ const experiences = [
     company: 'University of Manitoba',
     location: 'Winnipeg, MB, Canada',
     period: 'May 2025 – Aug 2025',
-    description: 'Developed a Computer Vision model to detect and separate infected and healthy seeds for industrial applications, enhancing agricultural efficiency through machine learning.',
+    description: 'Developed a Computer Vision model to detect and separate infected and healthy seeds for industrial applications, using visual transformers.',
     skills: ['Python', 'TensorFlow', 'Keras', 'LaTeX', 'GitHub']
   },
   {
@@ -36,8 +36,8 @@ const experiences = [
     company: 'Resilient AG',
     location: 'Winnipeg, MB, Canada',
     period: 'Dec 2024 – Mar 2025',
-    description: 'Enhanced a Django-based website by developing an AI-powered marketplace with distinct buyer and seller interfaces, integrating NLP for multilingual accessibility.',
-    skills: ['SQLAlchemy', 'Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'SQLite', 'NLP']
+    description: 'Enhanced a Django-based website by developing an AI-powered marketplace with distinct buyer and seller parts of the website.',
+    skills: ['SQLAlchemy', 'Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'SQLite', 'Full Stack Development']
   },
   {
     title: 'AI Software Developer Intern (Term 1)',
@@ -93,7 +93,7 @@ const experiences = [
       'Engineered modular features using TypeScript and JavaScript to ensure scalability.',
       'Developed a responsive, user-centric website to showcase the MVP’s capabilities.'
     ].join('\n'),
-    skills: ['TypeScript', 'JavaScript', 'Node.js', 'React.js', 'Web Development', 'Leadership', 'LaTeX']
+    skills: ['TypeScript', 'JavaScript', 'Node.js', 'React.js', 'Full Stack Development', 'Leadership', 'LaTeX']
   },
   {
     title: 'CEO',
