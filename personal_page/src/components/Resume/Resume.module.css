@@ -5,6 +5,16 @@
   background-color: var(--container-bg);
   transition: background-color 0.3s ease;
 }
+.sectionTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
 
 .resumeHeader {
   display: flex;
@@ -12,11 +22,21 @@
   align-items: center;
   margin-bottom: 2rem;
 }
-
-.resumeTitle {
+.sectionTitle {
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+.resumeTitle {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
   transition: color 0.3s ease;
 }
 
@@ -75,8 +95,13 @@
 
 @media (max-width: 768px) {
   .resumeHeader {
-    flex-direction: column;
-    align-items: flex-start;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    transition: color 0.3s ease;
   }
 
   .resumeActions {
