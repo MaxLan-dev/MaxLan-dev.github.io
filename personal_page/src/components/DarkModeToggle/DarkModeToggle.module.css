@@ -1,51 +1,40 @@
-.switch-container {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 1000;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 48px;
-  height: 24px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--border-color);
-  transition: 0.3s;
-  border-radius: 24px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
-  background-color: #ffffff;
-  transition: 0.3s;
+.toggleButton {
+  background-color: var(--container-bg);
+  border: 2px solid var(--border-color);
   border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:checked + .slider {
-  background-color: var(--accent);
+.toggleButton:hover {
+  box-shadow: 0 4px 12px var(--accent-shadow);
 }
 
-input:checked + .slider:before {
-  transform: translateX(24px);
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 1.3rem;
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .toggleButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+  }
 }

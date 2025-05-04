@@ -8,7 +8,6 @@ import Achievements from './components/Achievements/Achievements';
 import Education from './components/Education/Education';
 import Resume from './components/Resume/Resume';
 import Footer from './components/Footer/Footer';
-import DarkModeToggle from './components/DarkModeToggle/DarkModeToggle';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,8 +19,7 @@ const App = () => {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
-        <Header darkMode={darkMode} />
-        <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="flex-grow container">
           <Routes>
             <Route path="/" element={<Home />} />

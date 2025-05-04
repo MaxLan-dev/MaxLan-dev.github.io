@@ -228,9 +228,6 @@ const Home = () => {
             Email: <a href="mailto:lanmaksym@gmail.com" className={styles.contactLink}>lanmaksym@gmail.com</a>
           </p>
           <p className={styles.contactItem}>
-            GitHub: <a href="https://github.com/MaxLan-dev" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>github.com/MaxLan-dev</a>
-          </p>
-          <p className={styles.contactItem}>
             LinkedIn: <a href="https://www.linkedin.com/in/maksym-lan/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>linkedin.com/in/maksym-lan</a>
           </p>
         </div>
