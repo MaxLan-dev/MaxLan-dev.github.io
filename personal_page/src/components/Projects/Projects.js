@@ -1,6 +1,6 @@
 // src/components/Projects/Projects.js
 import React from 'react';
-import styles from './Projects.css';
+import styles from './Projects.module.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const projects = [
   {

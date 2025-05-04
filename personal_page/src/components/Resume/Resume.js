@@ -1,7 +1,7 @@
 // src/components/Resume/Resume.js
 import React, { useState } from 'react';
 import { FaDownload, FaExpand, FaCompress } from 'react-icons/fa';
-import styles from './Resume.css';
+import styles from './Resume.module.css';
 
 const Resume = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);

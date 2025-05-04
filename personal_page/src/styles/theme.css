@@ -1,143 +1,59 @@
-/* theme.css */
-
+/* Theme Variables */
 :root {
-  /* Light Theme Variables */
-  --light-bg: #f8f9fa;
-  --light-text: #333333;
-  --light-header-bg: #ffffff;
+  /* Light Theme */
+  --light-bg: #f5f7fa;
+  --light-text: #1a202c;
+  --light-secondary-text: #4a5568;
   --light-container-bg: #ffffff;
-  --light-link: #007bff;
-  --light-btn-bg: #007bff;
+  --light-header-bg: #ffffff;
+  --light-accent: #3b82f6;
+  --light-accent-hover: #2563eb;
+  --light-border: #e2e8f0;
+  --light-shadow: rgba(0, 0, 0, 0.05);
+  --light-btn-bg: #3b82f6;
+  --light-btn-hover-bg: #2563eb;
   --light-btn-text: #ffffff;
-  --light-btn-hover-bg: #0056b3;
-  --light-border: #dee2e6;
-  --light-shadow: rgba(0, 0, 0, 0.1);
 
-  /* Dark Theme Variables */
-  --dark-bg: #1a1a1a;
-  --dark-text: #e0e0e0;
-  --dark-header-bg: #2c2c2c;
-  --dark-container-bg: #2c2c2c;
-  --dark-link: #66b0ff;
-  --dark-btn-bg: #3a3a3a;
+  /* Dark Theme */
+  --dark-bg: #111827;
+  --dark-text: #e2e8f0;
+  --dark-secondary-text: #9ca3af;
+  --dark-container-bg: #1f2a44;
+  --dark-header-bg: #1f2a44;
+  --dark-accent: #60a5fa;
+  --dark-accent-hover: #3b82f6;
+  --dark-border: #374151;
+  --dark-shadow: rgba(255, 255, 255, 0.05);
+  --dark-btn-bg: #60a5fa;
+  --dark-btn-hover-bg: #3b82f6;
   --dark-btn-text: #ffffff;
-  --dark-btn-hover-bg: #4a4a4a;
-  --dark-border: #444444;
-  --dark-shadow: rgba(255, 255, 255, 0.1);
 
-  /* Default Theme (Light) */
+  /* Default to Light Theme */
   --bg-color: var(--light-bg);
   --text-color: var(--light-text);
-  --header-bg: var(--light-header-bg);
+  --secondary-text: var(--light-secondary-text);
   --container-bg: var(--light-container-bg);
-  --link-color: var(--light-link);
-  --btn-bg: var(--light-btn-bg);
-  --btn-text: var(--light-btn-text);
-  --btn-hover-bg: var(--light-btn-hover-bg);
+  --header-bg: var(--light-header-bg);
+  --accent: var(--light-accent);
+  --accent-hover: var(--light-accent-hover);
   --border-color: var(--light-border);
   --shadow-color: var(--light-shadow);
+  --btn-bg: var(--light-btn-bg);
+  --btn-hover-bg: var(--light-btn-hover-bg);
+  --btn-text: var(--light-btn-text);
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.container {
-  background-color: var(--container-bg);
-  box-shadow: 0 0 15px var(--shadow-color);
-  border: 1px solid var(--border-color);
-}
-
-.header {
-  background-color: var(--header-bg);
-}
-
-a {
-  color: var(--link-color);
-}
-
-.btn {
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-}
-
-.btn:hover {
-  background-color: var(--btn-hover-bg);
-}
-
-/* Dark Mode Styles */
 body.dark-mode {
   --bg-color: var(--dark-bg);
   --text-color: var(--dark-text);
-  --header-bg: var(--dark-header-bg);
+  --secondary-text: var(--dark-secondary-text);
   --container-bg: var(--dark-container-bg);
-  --link-color: var(--dark-link);
-  --btn-bg: var(--dark-btn-bg);
-  --btn-text: var(--dark-btn-text);
-  --btn-hover-bg: var(--dark-btn-hover-bg);
+  --header-bg: var(--dark-header-bg);
+  --accent: var(--dark-accent);
+  --accent-hover: var(--dark-accent-hover);
   --border-color: var(--dark-border);
   --shadow-color: var(--dark-shadow);
-}
-
-/* Toggle Switch Styles */
-.switch-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: var(--link-color);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .switch-container {
-    top: 10px;
-    right: 10px;
-  }
+  --btn-bg: var(--dark-btn-bg);
+  --btn-hover-bg: var(--dark-btn-hover-bg);
+  --btn-text: var(--dark-btn-text);
 }

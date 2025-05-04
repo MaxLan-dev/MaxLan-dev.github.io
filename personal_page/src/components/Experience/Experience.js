@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Experience.css';
+import styles from './Experience.module.css';
 import { FaBriefcase, FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
 
 const experiences = [
@@ -53,8 +53,12 @@ const Experience = () => {
       <h2 className={styles.sectionTitle}>My Professional Journey</h2>
       <div className={styles.timeline}>
         {experiences.map((experience, index) => (
-          <div key={index} className={`${styles.experienceBox} ${expandedIndex === index ? styles.expanded : ''}`}>
-            <div className={styles.experienceHeader} onClick={() => toggleExpand(index)}>
+          <div
+            key={index}
+            className={`${styles.experienceBox} ${expandedIndex === index ? styles.expanded : ''}`}
+            onClick={() => toggleExpand(index)}
+          >
+            <div className={styles.experienceHeader}>
               <h3 className={styles.experienceTitle}>{experience.title}</h3>
               <p className={styles.experienceCompany}>
                 <FaBriefcase className={styles.icon} /> {experience.company}
@@ -69,7 +73,7 @@ const Experience = () => {
               </p>
               <p className={styles.experienceDescription}>{experience.description.split('·')[1]}</p>
               <div className={styles.skillsTags}>
-                {experience.description.split('Skills:')[1].split('·').map((skill, skillIndex) => (
+                {experience.description.split('Skills:')[1]?.split('·').map((skill, skillIndex) => (
                   <span key={skillIndex} className={styles.skillTag}>{skill.trim()}</span>
                 ))}
               </div>

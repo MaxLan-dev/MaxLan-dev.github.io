@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Achievements.css';
+import styles from './Achievements.module.css';
 
 const achievements = [
   {
@@ -61,9 +61,7 @@ const achievements = [
 
 const Achievements = () => (
   <section className={styles.achievementsContainer}>
-    <div className={styles.achievementsHeader}>
-      <h2 className={styles.achievementsTitle}>Achievements</h2>
-    </div>
+    <h2 className={styles.achievementsTitle}>Achievements</h2>
     <ul className={styles.achievementsList}>
       {achievements.map((achievement, index) => (
         <li key={index} className={styles.achievementBox}>
