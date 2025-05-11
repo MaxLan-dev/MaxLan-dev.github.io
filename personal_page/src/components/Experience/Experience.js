@@ -8,7 +8,7 @@ const experiences = [
     company: 'University of Manitoba',
     location: 'Winnipeg, MB, Canada',
     period: 'May 2025 – Aug 2025',
-    description: 'Developed a Computer Vision model to detect and separate infected and healthy seeds for industrial applications, using visual transformers.',
+    description: 'Developing a Computer Vision model to detect and separate infected and healthy seeds for industrial applications, using visual transformers.',
     skills: ['Python', 'TensorFlow', 'Keras', 'LaTeX', 'GitHub']
   },
   {
@@ -16,8 +16,15 @@ const experiences = [
     company: 'Resilient AG',
     location: 'Winnipeg, MB, Canada',
     period: 'Apr 2024 – Present',
-    description: 'Refined an existing MVP to a production-ready state, improving functionality and implementing robust cybersecurity measures to ensure website safety and reliability.',
-    skills: ['Python', 'Django', 'SQLAlchemy', 'SQL', 'SQLite', 'Llama-index', 'Qdrant', 'Cybersecurity']
+     description: [
+      'Refined and improved an existing MVP to a production-ready state, taking user\' feedback and applying it at each iteration.',
+      'Enhanced the SQL to language converter, combining 99.999% accuracy and full safety of the database, as a result of carefull Promt and SQL injections protection.',
+      'Enhaced the user interface by carefully applying the principles of UX/UI design, resulting in a 50% increase in user satisfaction.',
+      'Enabled the platform to support 10000+ concurrent users, ensuring high availability and performance.',
+      'Allowed the KnowledgeBase admin to modify and change the vector database from a web interface, allowing to ease the interaction.',
+      'Used Agile methodologies to ensure timely delivery and continuous improvement of the platform.',
+    ].join('\n'),
+    skills: ['Python', 'Django', 'SQLAlchemy', 'Developement Lead',  'SQL', 'SQLite', 'Llama-index', 'Qdrant', 'Cybersecurity', 'LLMs', 'Full Stack Development', 'Agile Development', 'HTML', 'CSS', 'JavaScript']
   },
   {
     title: 'CEO/Developer',
@@ -27,17 +34,27 @@ const experiences = [
     description: [
       'Co-founded an AI-powered platform to aggregate small food business orders for cost-effective bulk purchases.',
       'Led the design and development of the startup’s MVP, overseeing all phases from concept to implementation.',
-      'Built a scalable SaaS solution using modern web technologies to streamline order aggregation and processing.'
+      'Built a scalable SaaS solution using modern web technologies to streamline order aggregation and processing.',
+      'Led the communication with local businesses to ensure the platform meets their needs and expectations.',
+      'Implemented a user-friendly interface to enhance the customer experience and facilitate easy navigation.',
+      'Utilized Agile methodologies to ensure timely delivery and continuous improvement of the platform.',
+      'Conducted market research to identify customer needs and preferences, informing product development and marketing strategies.',
     ].join('\n'),
-    skills: ['Django', 'JavaScript', 'SaaS', 'Full Stack Development', 'Leadership', 'HTML', 'CSS', 'Python', 'AI']
+    skills: ['Django', 'Python', 'JavaScript', 'SaaS', 'Developement Lead',  'Full Stack Development', 'Leadership', 'HTML', 'CSS', 'Python', 'AI', 'Agile Development', 'Market Research']
   },
   {
     title: 'AI Software Developer Intern (Term 2)',
     company: 'Resilient AG',
     location: 'Winnipeg, MB, Canada',
     period: 'Dec 2024 – Mar 2025',
-    description: 'Enhanced a Django-based website by developing an AI-powered marketplace with distinct buyer and seller parts of the website.',
-    skills: ['SQLAlchemy', 'Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'SQLite', 'Full Stack Development']
+    description: [
+      'Single-handedly developed a complex marketplace platform from scratch, with a special focus on a farmer-retailer interaction.',
+      'Developed a language to SQL to language converter that integrates a safe-guarded LLM with an SQLite database, and achives 99.99% accuracy.',
+      'Designed an implemented a user-friendly interface for seamless navigation and interaction, reducing the search time by 80%.',
+      'Desgined a complex functional and scalable database schema, using SQLAlchemy to ensure the safety and effectvieness in platform’s operations.',
+      'Used Agile methodologies to ensure timely delivery and continuous improvement of the platform.',
+    ].join('\n'),
+    skills: ['SQLAlchemy', 'Django', 'Python', 'Developement Lead', 'HTML', 'Tailwind CSS', 'JavaScript', 'SQLite', 'Full Stack Development', 'LLMs', 'Agile Development', 'Cybersecurity', 'SaaS']
   },
   {
     title: 'AI Software Developer Intern (Term 1)',
@@ -45,11 +62,15 @@ const experiences = [
     location: 'Winnipeg, MB, Canada',
     period: 'Aug 2024 – Nov 2024',
     description: [
-      'Single-handedly developed a Django website from scratch, integrating a Retrieval-Augmented Generation (RAG) AI chatbot for farmers.',
-      'Enabled access to a 100GB database, achieving 99.98% accuracy for the startup’s MVP.',
-      'Designed responsive front-end and back-end components to support real-time agricultural data interactions.'
+      'Single-handedly developed a Django website from scratch, including a farmer registration, integration of a 100GB knowledge base, and an SQLite database.',
+      'Integrating Large Language Models through Retrieval-Augmented Generation (RAG), provided users an access to a 100GB Qdrant vector knowledge base database, achieving 99.98% accuracy in responses.',
+      'Designed responsive front-end and back-end components to support the functionality of the website, and a proper work of the chatbot.',
+      'Implemented a querry limit per unregistered user and provided a proper user interface for the admin to change the limit.',
+      'Experimented with different LLMs,vector encoders, and vector databases to find the most effective combination for the platform.',
+      'Conducted extensive testing and debugging to ensure the platform’s reliability and performance, achieving a 99.9% uptime.',
+      'Utilized Agile methodologies to ensure timely delivery and continuous improvement of the platform.',
     ].join('\n'),
-    skills: ['Python', 'Django', 'SQLite', 'Llama-index', 'Qdrant', 'HTML', 'CSS', 'LLMs', 'Full Stack Development', 'JavaScript']
+    skills: ['Python', 'Django', 'SQLite', 'Developement Lead', 'Llama-index', 'Qdrant', 'HTML', 'CSS', 'LLMs', 'Full Stack Development', 'JavaScript', 'Cybersecurity', 'Agile Development', 'SaaS']
   },
   {
     title: 'Vice President',
