@@ -8,8 +8,13 @@ const experiences = [
     company: 'University of Manitoba',
     location: 'Winnipeg, MB, Canada',
     period: 'May 2025 – Aug 2025',
-    description: 'Developing a Computer Vision model to detect and separate infected and healthy seeds for industrial applications, using visual transformers.',
-    skills: ['Python', 'TensorFlow', 'Keras', 'LaTeX', 'GitHub']
+    description: [
+      'Creating an automated system for determining the infected area of a wheat palnt, using the hyperspectral imaging and reflectance',
+      'Created an image clearing algorithm to remove the spikes and other unwanted objects from the image using python and skimage.',
+      'Plotted the hyperspectral image using the matplotlib library, and used the numpy to get the cleaned hypercube.',
+      'Publication of the paper in preparation',
+    ].join('\n'),
+    skills: ['Python', 'Numpy', 'Skimage', 'Matplotlib', 'TensorFlow', 'Keras', 'LaTeX', 'GitHub']
   },
   {
     title: 'Junior AI Software Developer',
