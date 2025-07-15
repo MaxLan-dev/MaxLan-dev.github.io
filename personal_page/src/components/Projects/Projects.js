@@ -4,6 +4,14 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
   {
+    title: 'Project JP',
+    description: 'A comprehensive AI chatbot application for a large SAAS provider, integrating Azure AI Services with a .NET backend. Features real-time messaging, intelligent conversational interface, data collection tools, analytics monitoring, and Docker containerization for production deployment.',
+    period: 'May 2025 - Aug. 2025',
+    association: 'University of Manitoba and large SAAS provider',
+    skills: ['C#', '.NET', 'ASP.NET Core', 'Azure AI Services', 'Azure OpenAI', 'Docker', 'JavaScript', 'HTML', 'CSS', 'Markdown', 'Web Scraping', 'PDF Processing', 'Analytics', 'Container Registry', 'API Development', 'GitHub'],
+    link: '#'
+  },
+  {
     title: 'Winnipeg Public Transit Improvements Map',
     description: 'A data visualization of the areas with the enhacments in the Winnipeg public transit system required based on public data.',
     period: 'March 2025 - April 2025',
