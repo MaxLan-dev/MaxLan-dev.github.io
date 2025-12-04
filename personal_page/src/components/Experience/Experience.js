@@ -4,6 +4,20 @@ import styles from './Experience.module.css';
 
 const experiences = [
   {
+    title: 'Software Developer',
+    company: 'Online Business Systems',
+    location: 'Winnipeg, Manitoba, Canada',
+    period: 'Aug 2025 – Present',
+    description: [
+      'Led development and maintenance for multi-tenant applications in the Application Managed Services (AMS) team, serving as primary developer on two key projects for the Manitoba Real Estate Association (MREA) and Mass Ingenuity; designed and implemented new features while upholding existing codebases, resulting in seamless client deliveries and enhanced system reliability.',
+      'Architected a new dashboard system and integrated microservices for MREA\'s core multi-tenant application, including phone call provider functionality; enhanced AI capabilities to double accuracy (from baseline metrics), and provided strategic guidance on internal tools, driving organizational efficiency and informed decision-making.',
+      'Optimized data pipelines and CI/CD processes using Azure DevOps and Data Factory, identifying and resolving long-standing ETL data leakages; achieved 2x performance gains in production environments, reducing processing times and minimizing operational risks.',
+      'Spearheaded enhancements and Azure deployments for Mass Ingenuity\'s Results Now project using .NET and Vue; collaborated with IST teams to debug and resolve production issues as principal developer, ensuring 99.9% uptime and faster iteration cycles.',
+      'Maintained and enhanced a professional development platform for the Law Society of Alberta, working on the backlog items and optimizing the existing .NET Angular software.',
+    ].join('\n'),
+    skills: ['.NET', '.NET Core', 'ASP.NET Core', 'Angular', 'Microservices', 'Multi-tenant Architecture', 'Vue.js', 'Azure DevOps', 'Azure Data Factory', 'Azure', 'CI/CD', 'ETL', 'Full Stack Development', 'Software Architecture', 'System Optimization', 'Service Orchestration']
+  },
+  {
     title: 'Summer Student Technician',
     company: 'University of Manitoba',
     location: 'Winnipeg, MB, Canada',

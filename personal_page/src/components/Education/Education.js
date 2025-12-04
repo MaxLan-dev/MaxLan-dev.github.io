@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaStar, FaUsers, FaTrophy } from 'react-icons/fa';
+import { FaGraduationCap, FaStar, FaUsers, FaTrophy, FaCertificate } from 'react-icons/fa';
 import styles from './Education.module.css';
 
 const education = {
-  degree: 'Bachelor of Computer Science, Minor in Mathematics and Statistics',
+  degree: 'Bachelor of Computer Science, Minor in Mathematics and Statistics with Distinction',
   institution: 'University of Manitoba',
   location: 'Winnipeg, MB, Canada',
   period: 'Jan 2023 – Aug 2025',
-  gpa: '3.92/4.5',
+  gpa: '3.90 4.5',
   coursework: {
     computerScience: [
       'Introductory Computer Science 1 (COMP 1010)',
@@ -51,15 +51,26 @@ const education = {
       title: 'University Speedrun',
       description: [
         'Completed a 4-year Bachelor of Computer Science degree in 2.5 years through strategic course planning and accelerated study.',
-        'Maintained a 3.92/4.5 GPA while leading professional projects and university clubs.',
+        'Maintained a 3.9/4.5 GPA while leading professional projects and university clubs.',
         'Applied advanced AI, ML, and software engineering skills to projects like GroupBuy and Resilient AG.'
       ]
     },
     {
-      title: 'Dean’s Honour List',
+      title: 'Dean\'s Honour List',
       description: [
         'Received for exceptional academic standing in Jan 2024, May 2024, Aug 2024, Jan 2025 and May 2025.',
         'Recognized for maintaining a GPA of 3.92/4.5 across rigorous coursework.'
+      ]
+    }
+  ],
+  certifications: [
+    {
+      title: 'Certified ScrumMaster (CSM)',
+      issuer: 'Scrum Alliance',
+      period: 'Nov 2025',
+      description: [
+        'Certified in Scrum framework and agile software development methodologies.',
+        'Demonstrated expertise in facilitating Scrum ceremonies, removing impediments, and coaching teams.'
       ]
     }
   ],
@@ -246,6 +257,33 @@ const Education = () => {
         ))}
       </motion.div>
 
+      {/* Certifications */}
+      <motion.div
+        className={styles.educationCard}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.25 }}
+        viewport={{ once: true }}
+      >
+        <FaCertificate className={styles.sectionIcon} />
+        <h2 className={styles.sectionTitle}>Certifications</h2>
+        {education.certifications.map((certification, index) => (
+          <div key={index} className={styles.achievement}>
+            <h4 className={styles.achievementTitle}>
+              <FaCertificate className={styles.starIcon} /> {certification.title}
+            </h4>
+            <p className={styles.educationDetails}>
+              {certification.issuer} | {certification.period}
+            </p>
+            <ul className={styles.achievementList}>
+              {certification.description.map((item, idx) => (
+                <li key={idx} className={styles.achievementItem}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </motion.div>
+
       {/* Clubs & Leadership */}
       <motion.div
         className={styles.educationCard}
@@ -276,7 +314,7 @@ const Education = () => {
         className={styles.educationCard}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 0.5, delay: 0.35 }}
         viewport={{ once: true }}
       >
         <FaTrophy className={styles.sectionIcon} />

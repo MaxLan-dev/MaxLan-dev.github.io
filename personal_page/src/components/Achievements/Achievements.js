@@ -3,6 +3,16 @@ import styles from './Achievements.module.css';
 
 const achievements = [
   {
+    title: '1st Place - Boosting Canadian Productivity Hackathon',
+    description: 'Won 1st prize with NullTerminators team (Email Helper) · 2025',
+    icon: '🥇'
+  },
+  {
+    title: 'Highest Contribution Certificate - Builders League Hackathon',
+    description: 'UPRO Soccer Hackathon · Highest contribution certificate for checkpoint · 2025',
+    icon: '🏆'
+  },
+  {
     title: 'Dean\'s Honour List',
     description: 'Issued by University of Manitoba · May 2025',
     icon: '🏆'
