@@ -18,6 +18,21 @@ const experiences = [
     skills: ['.NET', '.NET Core', 'ASP.NET Core', 'Angular', 'Microservices', 'Multi-tenant Architecture', 'Vue.js', 'Azure DevOps', 'Azure Data Factory', 'Azure', 'CI/CD', 'ETL', 'Full Stack Development', 'Software Architecture', 'System Optimization', 'Service Orchestration']
   },
   {
+    title: 'Principal Software Developer',
+    company: 'GY Tea',
+    location: 'Winnipeg, MB, Canada',
+    period: 'Sep 2025 – Present',
+    description: [
+      'Architected and developed a full-stack e-commerce platform for a family-run loose leaf tea business from the ground up, serving as the principal technical lead.',
+      'Built a comprehensive product catalog with category management, shopping cart with guest checkout support, and secure Square payment processing integration.',
+      'Implemented user authentication, order management system, product reviews, blog/articles functionality, and newsletter subscription features.',
+      'Designed and developed a complete admin dashboard for managing products, orders, categories, promotions, and customer communications.',
+      'Leveraged React Router v7, TypeScript, Supabase database, and Netlify Functions to create a scalable, serverless architecture.',
+      'Ensured seamless user experience with responsive design and optimized performance for production deployment on Netlify.',
+    ].join('\n'),
+    skills: ['React.js', 'React Router', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Supabase', 'Square API', 'Payment Processing', 'E-Commerce', 'Netlify Functions', 'Serverless Architecture', 'Authentication', 'Database Design', 'API Development', 'Full-Stack Development', 'Software Architecture']
+  },
+  {
     title: 'Summer Student Technician',
     company: 'University of Manitoba',
     location: 'Winnipeg, MB, Canada',
@@ -95,7 +110,7 @@ const experiences = [
     title: 'Vice President',
     company: 'University of Manitoba Artificial Intelligence Club',
     location: 'Winnipeg, MB, Canada',
-    period: 'May 2024 – Present',
+    period: 'May 2024 – Aug 2025',
     description: [
       'Spearheaded neural network competitions and hands-on AI projects, engaging over 200 students.',
       'Organized and led 5+ workshops, boosting participation by 60% with industry professional guest speakers.',
@@ -107,7 +122,7 @@ const experiences = [
     title: 'Co-founder/Vice President',
     company: 'University of Manitoba Programming Projects Club',
     location: 'Winnipeg, MB, Canada',
-    period: 'Nov 2023 – Present',
+    period: 'Nov 2023 – Aug 2025',
     description: [
       'Coordinated programming events and workshops, benefiting over 50 participants per session.',
       'Mentored 5+ project teams in developing and deploying applications.',

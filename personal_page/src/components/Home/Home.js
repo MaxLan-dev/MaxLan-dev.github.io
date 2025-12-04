@@ -31,7 +31,7 @@ const Home = () => {
       >
         <div className={styles.heroContent}>
           <motion.img
-            src="/images/profile.jpg"
+            src="/images/profile.png"
             alt="Maksym Lan"
             className={styles.profileImage}
             initial={{ scale: 0.8, opacity: 0 }}
@@ -52,7 +52,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            Maksym Lan - Computer Science Student | AI, ML & Full Stack Developer
+            Maksym Lan - Computer Science Graduate | AI, ML & Full Stack Developer
           </motion.p>
           <div className={styles.buttonContainer}>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -97,14 +97,14 @@ const Home = () => {
         <FaUser className={styles.sectionIcon} />
         <h2 className={styles.sectionTitle}>About Me</h2>
         <p className={styles.sectionText}>
-          I'm Maksym(Max) Lan, a Computer Science student and about to be a graduate at the University of Manitoba, minoring in Mathematics and Statistics.
-          My passion lies in Machine Learning (ML), and I am excited to apply the university and work knowldge on real world probelms. 
-          I am a co-founder and a CEO of GroupBuy, student and a summer researcher at the UoM, developer at Resilient AG and executive of the UMAI and UMPPC, as well as a former CEO of Prowir and SorbMax. 
-          I’ve built AI-powered platforms and SaaS applications for startups and I am eager to gain more knowldge in future.
+          I'm Maksym (Max) Lan, a Computer Science graduate from the University of Manitoba, minoring in Mathematics and Statistics.
+          My passion lies in Machine Learning (ML), and I am excited to apply the university and work knowledge on real world problems. 
+          I am currently working as a Software Developer at Online Business Systems, a co-founder and CEO of GroupBuy, and executive of the UMAI and UMPPC, as well as a former CEO of Prowir and SorbMax. 
+          I've built AI-powered platforms and SaaS applications for startups and I am eager to gain more knowledge in the future.
         </p>
         <p className={styles.sectionText}>
           With my old passion and research background in astrophysics as well as my current leadership roles, I love to work in collaborative environments,
-          mixing knowldge and creative problem-solving. Check out my projects and experiences to see my work in action!
+          mixing knowledge and creative problem-solving. Check out my projects and experiences to see my work in action!
         </p>
       </motion.section>
 
@@ -154,15 +154,33 @@ const Home = () => {
               <li>HTML/CSS</li>
               <li>Tailwind CSS</li>
               <li>Redux</li>
+              <li>.NET / .NET Core</li>
+              <li>ASP.NET Core</li>
+              <li>Angular</li>
+              <li>Vue.js</li>
+            </ul>
+          </div>
+          <div className={styles.skillCategory}>
+            <h3>Cloud & DevOps</h3>
+            <ul className={styles.skillList}>
+              <li>Azure</li>
+              <li>Azure DevOps</li>
+              <li>Azure Data Factory</li>
+              <li>CI/CD</li>
+              <li>ETL</li>
+              <li>Microservices</li>
+              <li>Multi-tenant Architecture</li>
+              <li>Docker</li>
             </ul>
           </div>
           <div className={styles.skillCategory}>
             <h3>Tools & Soft Skills</h3>
             <ul className={styles.skillList}>
               <li>Git</li>
-              <li>Docker</li>
               <li>Linux</li>
               <li>LaTeX</li>
+              <li>Software Architecture</li>
+              <li>System Optimization</li>
               <li>Leadership</li>
               <li>Teamwork</li>
               <li>Problem-solving</li>
@@ -185,7 +203,7 @@ const Home = () => {
           <h3>Bachelor of Computer Science, Minor in Mathematics and Statistics</h3>
           <p className={styles.educationDetails}>University of Manitoba, Winnipeg, MB | Jan 2023 – Aug 2025</p>
           <p className={styles.sectionText}>
-            GPA: 3.92/4.5 (Current) | Completed a 4 year degree in 2.5 years by taking 6+ courses a term, mastering AI, ML, and software engineering.
+            GPA: 3.9/4.5 (Completed a 4 year degree with distinction in 2.5 years by taking 6+ courses a term, mastering AI, ML, and software engineering).
           </p>
         </div>
       </motion.section>
@@ -201,10 +219,10 @@ const Home = () => {
         <FaBriefcase className={styles.sectionIcon} />
         <h2 className={styles.sectionTitle}>Professional Experience</h2>
         <p className={styles.sectionText}>
-          Despite relative start of my career, I have already gained quite a bit of a software developement experience, primarily Full Stack and working on various AI focues
-          applications.
-          I am currently working as both a summer researcher at the University of Manitoba, and a software developer at Resilient AG, where I am involved in developing AI-based platforms.
-          I am also a co-founder and a CEO of GroupBuy, a SaaS platform for small food businesses, where I am responsible for leading the development of the platform and managing the team.
+          Despite relative start of my career, I have already gained quite a bit of software development experience, primarily Full Stack and working on various AI-focused applications.
+          I am currently working as a Software Developer at Online Business Systems, where I lead development and maintenance for multi-tenant applications using .NET, Angular, and Vue.js, architect microservices solutions, and optimize data pipelines with Azure DevOps and Data Factory. I work on AI-powered platforms that enhance system capabilities and drive organizational efficiency.
+          I am also working as a Principal Software Developer at GY Tea, where I architected and developed a full-stack e-commerce platform for a family-run loose leaf tea business. I built the entire platform from scratch using React Router v7, TypeScript, Supabase, and Netlify, including product catalog, shopping cart, secure payment processing, order management, and a complete admin dashboard.
+          Additionally, I am a co-founder and CEO of GroupBuy, an AI-powered SaaS platform that aggregates small food business orders for cost-effective bulk purchases. I lead the full-stack development using Django and modern web technologies, manage the team, and work directly with local businesses to ensure the platform meets their needs. The platform streamlines order aggregation and processing, helping small food businesses reduce costs through intelligent bulk purchasing.
           Prior to coming to Canada, I was a CEO of Prowir and SorbMax, where I led the development of a new wireless charger type and a startup focused on biodegradable filters, respectively.
           Check out my experience section for more details on my work.
         </p>
