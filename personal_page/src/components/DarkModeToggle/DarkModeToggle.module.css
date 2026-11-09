@@ -1,40 +1,26 @@
 .toggleButton {
-  background-color: var(--container-bg);
-  border: 2px solid var(--border-color);
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--surface);
+  color: var(--text-color);
   cursor: pointer;
-  box-shadow: 0 2px 8px var(--shadow-color);
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .toggleButton:hover {
-  box-shadow: 0 4px 12px var(--accent-shadow);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .iconContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
 }
 
 .icon {
-  font-size: 1.3rem;
-  color: var(--accent);
-  transition: color 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .toggleButton {
-    width: 32px;
-    height: 32px;
-  }
-
-  .icon {
-    font-size: 1.1rem;
-  }
+  font-size: 1rem;
 }

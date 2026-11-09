@@ -1,111 +1,40 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { achievementGroups } from '../../data/achievements';
 import styles from './Achievements.module.css';
 
-const achievements = [
-  {
-    title: '1st Place - Boosting Canadian Productivity Hackathon',
-    description: 'Won 1st prize with NullTerminators team (Email Helper) · 2025',
-    icon: '🥇'
-  },
-  {
-    title: 'Highest Contribution Certificate - Builders League Hackathon',
-    description: 'UPRO Soccer Hackathon · Highest contribution certificate for checkpoint · 2025',
-    icon: '🏆'
-  },
-  {
-    title: 'Dean\'s Honour List',
-    description: 'Issued by University of Manitoba · May 2025',
-    icon: '🏆'
-  },
-  {
-    title: 'Dean\'s Honour List',
-    description: 'Issued by University of Manitoba · Jan 2025',
-    icon: '🏆'
-  },
-  {
-    title: 'Dean\'s Honour List',
-    description: 'Issued by University of Manitoba · Aug 2024',
-    icon: '🏆'
-  },
-  {
-    title: 'Dean\'s Honour List',
-    description: 'Issued by University of Manitoba · May 2024',
-    icon: '🏆'
-  },
-  {
-    title: 'Dean\'s Honour List',
-    description: 'Issued by University of Manitoba · Jan 2024',
-    icon: '🏆'
-  },
-  {
-    title: 'Participation in the Future of Ukraine Competition',
-    description: 'Issued by Future of Ukraine · Feb 2022',
-    icon: '🏆'
-  },
-  {
-    title: 'Projects Competition 1st Place',
-    description: 'Issued by Sahasak Nimavum · Sep 2020',
-    icon: '🥇'
-  },
-  {
-    title: 'Projects Competition 2nd Place',
-    description: 'Issued by iCan Canada · Aug 2020',
-    icon: '🥈'
-  },
-  {
-    title: 'Projects Competition 3rd Place',
-    description: 'Issued by Intarg Poland · Jun 2020',
-    icon: '🥉'
-  },
-  {
-    title: '4th Place ISEF 2020',
-    description: 'Issued by ISEF Ukraine · Feb 2020',
-    icon: '🏅'
-  },
-  {
-    title: 'Competition Defense 1st Place',
-    description: 'Issued by Junior Academy of Sciences of Ukraine (Lviv Region) · Feb 2020',
-    icon: '🏆'
-  },
-  {
-    title: 'Participant in Innovation Market 2019',
-    description: 'Issued by Innovation Market · Nov 2019',
-    icon: '🎖️'
-  },
-  {
-    title: 'Participation BiotechCon',
-    description: 'Issued by BiotechCon · Jun 2019',
-    icon: '🧬'
-  },
-  {
-    title: 'Competition Defense 3rd Place',
-    description: 'Issued by Junior Academy of Sciences of Ukraine · May 2019',
-    icon: '🥉'
-  },
-  {
-    title: 'Competition Defense 1st Place',
-    description: 'Issued by Junior Academy of Sciences of Ukraine (Lviv Region) · Feb 2019',
-    icon: '🏆'
-  },
-  {
-    title: 'Competition Defense 3rd Place',
-    description: 'Issued by Junior Academy of Sciences of Ukraine (Lviv Region) · Feb 2018',
-    icon: '🥉'
-  }
-];
-
 const Achievements = () => (
-  <section className={styles.achievementsContainer}>
-    <h2 className={styles.achievementsTitle}>Achievements</h2>
-    <ul className={styles.achievementsList}>
-      {achievements.map((achievement, index) => (
-        <li key={index} className={styles.achievementBox}>
-          <div className={styles.achievementIcon}>{achievement.icon}</div>
-          <h3 className={styles.achievementTitle}>{achievement.title}</h3>
-          <p className={styles.achievementDescription}>{achievement.description}</p>
-        </li>
-      ))}
-    </ul>
+  <section className="page">
+    <header className="page-header">
+      <span className="eyebrow">Recognition</span>
+      <h1 className="page-title">Achievements</h1>
+      <p className="page-lede">Hackathon wins, academic honours and the science fairs where it all started.</p>
+    </header>
+
+    {achievementGroups.map((group) => (
+      <div key={group.title} className={styles.group}>
+        <h2 className={styles.groupTitle}>{group.title}</h2>
+        <ul className={styles.grid}>
+          {group.items.map((a, i) => (
+            <motion.li
+              key={`${a.title}-${a.meta}`}
+              className={`card card-hover ${styles.item}`}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: Math.min(i * 0.04, 0.2) }}
+            >
+              <span className={styles.icon} aria-hidden="true">{a.icon}</span>
+              <div>
+                <h3 className={styles.title}>{a.title}</h3>
+                <p className={styles.meta}>{a.meta}</p>
+                {a.description && <p className={styles.description}>{a.description}</p>}
+              </div>
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </section>
 );
 

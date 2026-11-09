@@ -1,356 +1,391 @@
-.homeContainer {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  position: relative;
-  background-color: var(--container-bg);
-  transition: background-color 0.3s ease;
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 1.5rem 0 3rem;
 }
 
-.heroSection {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-  color: var(--btn-text);
-  padding: 6rem 2rem;
-  text-align: center;
-  border-radius: 24px;
-  margin-bottom: 4rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 32px var(--shadow-color);
-  transition: box-shadow 0.3s ease;
-}
-
-.heroSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1%, transparent 1%);
-  background-size: 20px 20px;
-  opacity: 0.3;
-  animation: particleMove 20s linear infinite;
-}
-
-.heroContent {
-  position: relative;
-  z-index: 1;
-}
-
-.profileImage {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 1.5rem;
-  border: 4px solid var(--btn-text);
-  box-shadow: 0 4px 12px var(--shadow-color);
-  transition: border-color 0.3s ease;
-}
-
-.title {
-  font-size: 3.5rem;
+.name {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
   font-weight: 700;
+  letter-spacing: -0.03em;
   margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  font-family: 'Poppins', sans-serif;
-  color: var(--btn-text);
-  margin-bottom: 2.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+.headline {
+  font-size: 1.15rem;
+  max-width: 560px;
+  margin-bottom: 1.5rem;
 }
 
-.buttonContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.heroButton {
+.terminal {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--btn-text);
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
   border-radius: 12px;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  text-decoration: none;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  border: 1px solid #1e293b;
+  margin-bottom: 1.75rem;
+  max-width: 100%;
 }
 
-.heroButton:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+.prompt {
+  color: #2dd4bf;
 }
 
-.sectionCard {
-  background: var(--container-bg);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 8px 24px var(--shadow-color);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+.caret {
+  width: 8px;
+  height: 1.05em;
+  background: #a78bfa;
+  animation: blink 1.1s steps(1) infinite;
 }
 
-.sectionCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px var(--shadow-color);
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
-.sectionIcon {
-  font-size: 2.5rem;
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--muted-text);
+}
+
+.heroSide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photoWrap {
+  position: relative;
+  width: min(300px, 75vw);
+  aspect-ratio: 1;
+  border-radius: 32px;
+  padding: 4px;
+  background: var(--gradient);
+  box-shadow: 0 30px 60px -30px rgba(124, 58, 237, 0.55);
+  transform: rotate(-2deg);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  background: var(--surface-2);
+}
+
+.nowCard {
+  position: relative;
+  margin-top: -2.5rem;
+  margin-left: 6rem;
+  padding: 1rem 1.15rem;
+  min-width: 240px;
+  box-shadow: var(--shadow-lg);
+}
+
+.nowLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-text);
+  margin-bottom: 0.5rem;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.nowList {
+  list-style: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.nowList li {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.nowRole {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.nowOrg {
   color: var(--accent);
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 4.5rem;
+}
+
+.stat {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+/* Sections */
+.section {
+  margin-bottom: 4.5rem;
+}
+
+.sectionHead {
+  margin-bottom: 1.75rem;
+}
+
+.sectionHeadRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
 }
 
 .sectionTitle {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+.moreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 1.5rem;
-  font-family: 'Poppins', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.sectionText {
-  font-size: 1rem;
-  color: var(--secondary-text);
-  line-height: 1.8;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
-
-.skillsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.skillCategory {
-  background: var(--container-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skillCategory h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
-
-.skillList {
-  list-style: none;
-  padding: 0;
-}
-
-.skillList li {
-  font-size: 0.875rem;
-  color: var(--secondary-text);
-  margin-bottom: 0.5rem;
-  position: relative;
-  padding-left: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.skillList li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.educationItem {
-  background: var(--container-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.educationItem h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
-}
-
-.educationDetails {
-  font-size: 1rem;
-  color: var(--secondary-text);
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
-
-.contactGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.contactItem {
-  font-size: 0.875rem;
-  color: var(--secondary-text);
-  transition: color 0.3s ease;
-}
-
-.contactLink {
+  font-size: 0.92rem;
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-.contactLink:hover {
-  color: var(--accent-hover);
+.moreLink:hover {
   text-decoration: underline;
 }
 
-.socialLinks {
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+  font-size: 1.05rem;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.focusGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.focus {
+  padding: 1.5rem;
+  position: relative;
+}
+
+.focusIndex {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+.focusTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.focusBlurb {
+  margin-bottom: 1rem;
+}
+
+.chips {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.shipped {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+
+.shipped span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-2);
+  margin-right: 0.4rem;
+}
+
+.skills {
+  padding: 0.5rem 1.5rem;
+}
+
+.skillRow {
+  display: grid;
+  grid-template-columns: 160px 1fr;
   gap: 1rem;
-  justify-content: center;
+  align-items: start;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.socialLink {
-  font-size: 1.5rem;
-  color: var(--secondary-text);
-  transition: color 0.3s ease, transform 0.3s ease;
+.skillRow:last-child {
+  border-bottom: none;
 }
 
-.socialLink:hover {
-  color: var(--accent);
-  transform: scale(1.2);
+.skillGroup {
+  font-size: 0.95rem;
+  padding-top: 0.3rem;
 }
 
-.sectionButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--btn-text);
-  background-color: var(--btn-bg);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
-}
-
-.sectionButton:hover {
-  background-color: var(--btn-hover-bg);
-  transform: translateY(-2px);
-}
-
-.backToTop {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--accent);
-  color: var(--btn-text);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+/* Contact */
+.contact {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  z-index: 1000;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  background:
+    radial-gradient(500px 200px at 0% 0%, var(--accent-soft), transparent 70%),
+    radial-gradient(500px 200px at 100% 100%, var(--teal-soft), transparent 70%),
+    var(--surface);
 }
 
-@keyframes particleMove {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100px);
+.contactTitle {
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 960px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 1024px) {
-  .heroSection {
-    padding: 4rem 1.5rem;
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 0.5rem;
   }
 
-  .title {
-    font-size: 2.5rem;
+  .heroSide {
+    order: -1;
   }
 
-  .subtitle {
-    font-size: 1.25rem;
+  .nowCard {
+    margin-left: 0;
   }
 
-  .skillsGrid {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 768px) {
-  .heroSection {
-    padding: 3rem 1rem;
+@media (max-width: 640px) {
+  .projectGrid,
+  .focusGrid {
+    grid-template-columns: 1fr;
   }
 
-  .title {
-    font-size: 2rem;
+  .skillRow {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
-  .subtitle {
-    font-size: 1rem;
+  .statValue {
+    font-size: 1.6rem;
   }
 
-  .profileImage {
-    width: 100px;
-    height: 100px;
-  }
-
-  .buttonContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .heroButton {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-  }
-
-  .sectionCard {
+  .contact {
     padding: 1.5rem;
   }
 
-  .contactGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .backToTop {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+  .contactActions .btn {
+    width: 100%;
   }
 }

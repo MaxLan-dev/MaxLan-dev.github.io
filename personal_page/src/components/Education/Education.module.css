@@ -1,284 +1,185 @@
-.educationContainer {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-    background-color: var(--container-bg);
-    transition: background-color 0.3s ease;
+.degree {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  background:
+    radial-gradient(500px 220px at 0% 0%, var(--accent-soft), transparent 70%),
+    var(--surface);
+}
+
+.degreeIcon,
+.blockIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.degreeIcon {
+  width: 56px;
+  height: 56px;
+  font-size: 1.6rem;
+}
+
+.degreeBody {
+  flex: 1;
+}
+
+.degreeTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.degreeMeta {
+  font-size: 0.92rem;
+}
+
+.gpa {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.gpaValue {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gpaLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted-text);
+  margin-top: 0.3rem;
+}
+
+.block {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blockTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.blockIcon {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.twoCol .block {
+  margin-bottom: 1.5rem;
+}
+
+.courseGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.courseGroup {
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-2);
+  margin-bottom: 0.6rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chips :global(.chip) {
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.entryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.entry {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border-color);
+  margin-bottom: 0.75rem;
+}
+
+.entryGrid .entry {
+  margin-bottom: 0;
+}
+
+.entryHead {
+  margin-bottom: 0.5rem;
+}
+
+.entryTitle {
+  font-size: 1rem;
+}
+
+.entryMeta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--muted-text);
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 2px;
+  background: var(--accent-2);
+}
+
+@media (max-width: 860px) {
+  .twoCol,
+  .entryGrid {
+    grid-template-columns: 1fr;
   }
-  
-  .pageTitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 2rem;
-    transition: color 0.3s ease;
+
+  .degree {
+    flex-wrap: wrap;
   }
-  
-  .educationCard {
-    background-color: var(--container-bg);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 12px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+  .gpa {
+    align-items: flex-start;
   }
-  
-  .educationCard:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px var(--shadow-color);
-  }
-  
-  .sectionIcon {
-    font-size: 2rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    transition: color 0.3s ease;
-  }
-  
-  .sectionTitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .educationDetails {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: var(--secondary-text);
-    text-align: center;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .subTitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--text-color);
-    margin: 1.5rem 0 0.75rem;
-    transition: color 0.3s ease;
-  }
-  
-  .courseworkCategory {
-    margin-bottom: 1.5rem;
-  }
-  
-  .courseworkList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .courseworkItem {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-    position: relative;
-    padding-left: 1.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .courseworkItem::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .achievement {
-    margin-bottom: 1.5rem;
-  }
-  
-  .achievementTitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .starIcon {
-    font-size: 1rem;
-    color: var(--accent);
-    transition: color 0.3s ease;
-  }
-  
-  .achievementList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .achievementItem {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .achievementItem::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .club {
-    margin-bottom: 1.5rem;
-  }
-  
-  .clubTitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--accent);
-    margin-bottom: 0.25rem;
-    transition: color 0.3s ease;
-  }
-  
-  .clubDetails {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .clubList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .clubItem {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .clubItem::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .event {
-    margin-bottom: 1.5rem;
-  }
-  
-  .eventTitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--accent);
-    margin-bottom: 0.25rem;
-    transition: color 0.3s ease;
-  }
-  
-  .eventDetails {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .eventList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .eventItem {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: var(--secondary-text);
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .eventItem::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  @media (max-width: 768px) {
-    .educationContainer {
-      padding: 1.5rem 1rem;
-    }
-  
-    .pageTitle {
-      font-size: 2rem;
-    }
-  
-    .educationCard {
-      padding: 1rem;
-    }
-  
-    .sectionTitle {
-      font-size: 1.5rem;
-    }
-  
-    .educationDetails {
-      font-size: 0.9rem;
-    }
-  
-    .courseworkList {
-      grid-template-columns: 1fr;
-    }
-  
-    .courseworkItem,
-    .achievementItem,
-    .clubItem,
-    .eventItem {
-      font-size: 0.85rem;
-      padding-left: 1.25rem;
-    }
-  
-    .subTitle {
-      font-size: 1.1rem;
-    }
-  
-    .clubTitle,
-    .eventTitle,
-    .achievementTitle {
-      font-size: 1rem;
-    }
-  }
+}

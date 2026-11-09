@@ -1,92 +1,61 @@
-.projectsSection {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-}
-
-.projectGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.projectCard {
-  background-color: var(--container-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px var(--shadow-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.projectCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px var(--shadow-color);
-}
-
-.sectionTitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-
-.projectTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.projectPeriod, .projectAssociation {
-  font-size: 0.875rem;
-  color: var(--secondary-text);
-  margin-bottom: 0.5rem;
-}
-
-.projectDescription {
-  font-size: 0.875rem;
-  color: var(--secondary-text);
-  margin-bottom: 1rem;
-}
-
-.projectSkills {
+.filters {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.skill {
-  background-color: var(--border-color);
-  color: var(--secondary-text);
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
-}
-
-.projectLink {
+.filter {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--surface);
+  color: var(--secondary-text);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.projectLink:hover {
-  background-color: var(--btn-hover-bg);
+.filter:hover {
+  color: var(--text-color);
+  border-color: var(--accent);
 }
 
-@media (max-width: 768px) {
-  .projectGrid {
+.filterActive {
+  background: var(--text-color);
+  border-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.filterActive:hover {
+  color: var(--bg-color);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
     grid-template-columns: 1fr;
   }
 }

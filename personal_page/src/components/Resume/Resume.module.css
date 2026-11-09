@@ -1,114 +1,54 @@
-.resumeContainer {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  background-color: var(--container-bg);
-  transition: background-color 0.3s ease;
-}
-.sectionTitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-
-
-.resumeHeader {
+.header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.sectionTitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-.resumeTitle {
-  font-size: 2rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: var(--text-color);
-  text-align: center;
-  transition: color 0.3s ease;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.resumeActions {
+.actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
-.actionButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.expand {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
 }
 
-.actionButton:hover {
-  background-color: var(--btn-hover-bg);
-}
-
-.resumeWrapper {
-  position: relative;
-  width: 100%;
-  height: 800px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+.frameWrap {
   overflow: hidden;
-  background-color: var(--container-bg);
-  transition: background-color 0.3s ease;
+  padding: 0;
+  height: 80vh;
+  min-height: 560px;
 }
 
-.resumeFrame {
+.frame {
   width: 100%;
   height: 100%;
   border: none;
+  display: block;
 }
 
 .fullScreen {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+  inset: 0;
+  z-index: 2000;
   height: 100vh;
-  z-index: 9999;
-  border: none;
   border-radius: 0;
-  background-color: var(--container-bg);
-  transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .resumeHeader {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-    text-align: center;
-    transition: color 0.3s ease;
-  }
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 1;
+}
 
-  .resumeActions {
-    margin-top: 1rem;
-  }
-
-  .resumeWrapper {
-    height: 600px;
+@media (max-width: 640px) {
+  .frameWrap {
+    height: 70vh;
+    min-height: 420px;
   }
 }

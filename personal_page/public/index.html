@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#7c3aed" />
     <meta
       name="description"
-      content=""
+      content="Maksym Lan: software developer building AI products, enterprise platforms and full-stack apps. Winnipeg, Canada."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,9 +24,15 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Maksym Lan's webpage</title>
+    <title>Maksym Lan · Software Developer</title>
   </head>
   <body>
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) document.body.classList.add("dark-mode");
+      } catch (e) {}
+    </script>
     <noscript></noscript>
     <div id="root"></div>
     <!--

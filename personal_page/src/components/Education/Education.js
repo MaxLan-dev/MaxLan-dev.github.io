@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaStar, FaUsers, FaTrophy, FaCertificate } from 'react-icons/fa';
+import { FaGraduationCap, FaStar, FaUsers, FaTrophy, FaCertificate, FaBook } from 'react-icons/fa';
 import styles from './Education.module.css';
 
 const education = {
@@ -8,7 +8,7 @@ const education = {
   institution: 'University of Manitoba',
   location: 'Winnipeg, MB, Canada',
   period: 'Jan 2023 – Aug 2025',
-  gpa: '3.90 4.5',
+  gpa: '3.90 / 4.5',
   coursework: {
     computerScience: [
       'Introductory Computer Science 1 (COMP 1010)',
@@ -59,7 +59,7 @@ const education = {
       title: 'Dean\'s Honour List',
       description: [
         'Received for exceptional academic standing in Jan 2024, May 2024, Aug 2024, Jan 2025 and May 2025.',
-        'Recognized for maintaining a GPA of 3.92/4.5 across rigorous coursework.'
+        'Recognized for maintaining a 3.90+/4.5 GPA across rigorous coursework.'
       ]
     }
   ],
@@ -67,48 +67,54 @@ const education = {
     {
       title: 'Certified ScrumMaster (CSM)',
       issuer: 'Scrum Alliance',
-      period: 'Nov 2025',
+      period: 'Oct 2025 – Oct 2027',
       description: [
         'Certified in Scrum framework and agile software development methodologies.',
-        'Demonstrated expertise in facilitating Scrum ceremonies, removing impediments, and coaching teams.'
+        'Facilitating Scrum ceremonies, removing impediments, and coaching teams.'
       ]
+    },
+    {
+      title: 'Legacy JavaScript Algorithms and Data Structures',
+      issuer: 'freeCodeCamp',
+      period: 'Dec 2022',
+      description: ['JavaScript fundamentals, algorithms and data structures.']
     }
   ],
   clubs: [
     {
       name: 'University of Manitoba Artificial Intelligence Club',
       role: 'Vice President',
-      period: 'May 2024 – Present',
+      period: 'May 2024 – Sep 2025',
       description: [
         'Organized Industry AI Talks, featuring guest speakers from Lotlinx and others.',
         'Organized and hosted hands on AI workshops, each with audience of 70+ students.',
         'Led a team of 6 co-executives to manage events, partnerships, and budgets.',
-        'Organized a Lets Talk AI event with 70+ participants, featuring professors from the University of Manitoba and their research.'
+        "Organized a Let's Talk AI event with 70+ participants, featuring professors from the University of Manitoba and their research."
       ]
     },
     {
       name: 'University of Manitoba Programming Projects Club',
       role: 'Co-founder & Vice President',
-      period: 'Nov 2023 – Present',
+      period: 'Nov 2023 – Sep 2025',
       description: [
-        'Organized and hosted introdution sessions and project showcases, attracting 70+ participants.',
-        'Mentored 5+ project teams in developing applications, including an AI chat platfrom, Chat App and an AI course scheduler.',
+        'Organized and hosted introduction sessions and project showcases, attracting 70+ participants.',
+        'Mentored 5+ project teams in developing applications, including an AI chat platform, Chat App and an AI course scheduler.',
         'Led a team of 6 co-executives to oversee events, partnerships, and budgets.'
       ]
     },
     {
       name: '.devClub',
       role: 'Active Member',
-      period: 'Jan 2023 – Present',
+      period: 'Jan 2023 – Aug 2025',
       description: [
         'Participated in hackathons and coding challenges, enhancing skills in Full Stack and AI projects development.',
-        'Participated in coding sessions, increasing the knowldge of various software developement areas.',
+        'Participated in coding sessions, increasing the knowledge of various software development areas.',
       ]
     },
     {
       name: 'University of Manitoba Computer Science Student Association',
       role: 'Member',
-      period: 'Jan 2023 – Present',
+      period: 'Jan 2023 – Aug 2025',
       description: [
         'Attended meetings and events to stay updated on department activities and initiatives.',
         'Collaborated with peers to discuss curriculum changes and student concerns.',
@@ -172,169 +178,113 @@ const education = {
   ]
 };
 
-const Education = () => {
-  return (
-    <motion.section
-      className={styles.educationContainer}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+const Block = ({ icon: Icon, title, children, delay = 0 }) => (
+  <motion.section
+    className={`card ${styles.block}`}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-40px' }}
+    transition={{ duration: 0.4, delay }}
+  >
+    <h2 className={styles.blockTitle}>
+      <span className={styles.blockIcon}><Icon /></span>
+      {title}
+    </h2>
+    {children}
+  </motion.section>
+);
+
+const Entry = ({ title, meta, items }) => (
+  <div className={styles.entry}>
+    <div className={styles.entryHead}>
+      <h3 className={styles.entryTitle}>{title}</h3>
+      {meta && <span className={styles.entryMeta}>{meta}</span>}
+    </div>
+    <ul className={styles.list}>
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+const courseGroups = [
+  ['Computer Science', education.coursework.computerScience],
+  ['Mathematics', education.coursework.mathematics],
+  ['Statistics', education.coursework.statistics],
+];
+
+const Education = () => (
+  <section className="page">
+    <header className="page-header">
+      <span className="eyebrow">Education</span>
+      <h1 className="page-title">Four years of CS in two and a half</h1>
+      <p className="page-lede">Degree, coursework, certifications and the clubs and competitions around it.</p>
+    </header>
+
+    <motion.div
+      className={`card ${styles.degree}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      <h1 className={styles.pageTitle}>Education</h1>
-
-      {/* Degree Details */}
-      <motion.div
-        className={styles.educationCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <FaGraduationCap className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>{education.degree}</h2>
-        <p className={styles.educationDetails}>
-          {education.institution}, {education.location} | {education.period}
+      <span className={styles.degreeIcon}><FaGraduationCap /></span>
+      <div className={styles.degreeBody}>
+        <h2 className={styles.degreeTitle}>{education.degree}</h2>
+        <p className={styles.degreeMeta}>
+          {education.institution} · {education.location} · {education.period}
         </p>
-        <p className={styles.educationDetails}>GPA: {education.gpa}</p>
-      </motion.div>
+      </div>
+      <div className={styles.gpa}>
+        <span className={`${styles.gpaValue} gradient-text`}>3.90</span>
+        <span className={styles.gpaLabel}>GPA / 4.5</span>
+      </div>
+    </motion.div>
 
-      {/* Coursework */}
-      <motion.div
-        className={styles.educationCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: true }}
-      >
-        <h2 className={styles.sectionTitle}>Coursework</h2>
-        <div className={styles.courseworkCategory}>
-          <h3 className={styles.subTitle}>Computer Science</h3>
-          <ul className={styles.courseworkList}>
-            {education.coursework.computerScience.map((course, index) => (
-              <li key={index} className={styles.courseworkItem}>{course}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.courseworkCategory}>
-          <h3 className={styles.subTitle}>Mathematics</h3>
-          <ul className={styles.courseworkList}>
-            {education.coursework.mathematics.map((course, index) => (
-              <li key={index} className={styles.courseworkItem}>{course}</li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.courseworkCategory}>
-          <h3 className={styles.subTitle}>Statistics</h3>
-          <ul className={styles.courseworkList}>
-            {education.coursework.statistics.map((course, index) => (
-              <li key={index} className={styles.courseworkItem}>{course}</li>
-            ))}
-          </ul>
-        </div>
-      </motion.div>
-
-      {/* Academic Achievements */}
-      <motion.div
-        className={styles.educationCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <FaStar className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Academic Achievements</h2>
-        {education.achievements.map((achievement, index) => (
-          <div key={index} className={styles.achievement}>
-            <h4 className={styles.achievementTitle}>
-              <FaStar className={styles.starIcon} /> {achievement.title}
-            </h4>
-            <ul className={styles.achievementList}>
-              {achievement.description.map((item, idx) => (
-                <li key={idx} className={styles.achievementItem}>{item}</li>
+    <Block icon={FaBook} title="Coursework">
+      <div className={styles.courseGrid}>
+        {courseGroups.map(([name, courses]) => (
+          <div key={name}>
+            <h3 className={styles.courseGroup}>{name}</h3>
+            <div className={styles.chips}>
+              {courses.map((c) => (
+                <span key={c} className="chip">{c}</span>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
-      </motion.div>
+      </div>
+    </Block>
 
-      {/* Certifications */}
-      <motion.div
-        className={styles.educationCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.25 }}
-        viewport={{ once: true }}
-      >
-        <FaCertificate className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Certifications</h2>
-        {education.certifications.map((certification, index) => (
-          <div key={index} className={styles.achievement}>
-            <h4 className={styles.achievementTitle}>
-              <FaCertificate className={styles.starIcon} /> {certification.title}
-            </h4>
-            <p className={styles.educationDetails}>
-              {certification.issuer} | {certification.period}
-            </p>
-            <ul className={styles.achievementList}>
-              {certification.description.map((item, idx) => (
-                <li key={idx} className={styles.achievementItem}>{item}</li>
-              ))}
-            </ul>
-          </div>
+    <div className={styles.twoCol}>
+      <Block icon={FaStar} title="Academic achievements">
+        {education.achievements.map((a) => (
+          <Entry key={a.title} title={a.title} items={a.description} />
         ))}
-      </motion.div>
+      </Block>
+      <Block icon={FaCertificate} title="Certifications">
+        {education.certifications.map((c) => (
+          <Entry key={c.title} title={c.title} meta={`${c.issuer} · ${c.period}`} items={c.description} />
+        ))}
+      </Block>
+    </div>
 
-      {/* Clubs & Leadership */}
-      <motion.div
-        className={styles.educationCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        <FaUsers className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Clubs & Leadership</h2>
-        {education.clubs.map((club, index) => (
-          <div key={index} className={styles.club}>
-            <h4 className={styles.clubTitle}>{club.name}</h4>
-            <p className={styles.clubDetails}>
-              {club.role} | {club.period}
-            </p>
-            <ul className={styles.clubList}>
-              {club.description.map((item, idx) => (
-                <li key={idx} className={styles.clubItem}>{item}</li>
-              ))}
-            </ul>
-          </div>
+    <Block icon={FaUsers} title="Clubs & leadership">
+      <div className={styles.entryGrid}>
+        {education.clubs.map((c) => (
+          <Entry key={c.name} title={c.name} meta={`${c.role} · ${c.period}`} items={c.description} />
         ))}
-      </motion.div>
+      </div>
+    </Block>
 
-      {/* Competitive Events */}
-      <motion.div
-        className={styles.educationCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.35 }}
-        viewport={{ once: true }}
-      >
-        <FaTrophy className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Competitive Events</h2>
-        {education.competitiveEvents.map((event, index) => (
-          <div key={index} className={styles.event}>
-            <h4 className={styles.eventTitle}>{event.name}</h4>
-            <p className={styles.eventDetails}>
-              {event.type} | {event.period}
-            </p>
-            <ul className={styles.eventList}>
-              {event.description.map((item, idx) => (
-                <li key={idx} className={styles.eventItem}>{item}</li>
-              ))}
-            </ul>
-          </div>
+    <Block icon={FaTrophy} title="Competitive events">
+      <div className={styles.entryGrid}>
+        {education.competitiveEvents.map((e) => (
+          <Entry key={e.name} title={e.name} meta={`${e.type} · ${e.period}`} items={e.description} />
         ))}
-      </motion.div>
-    </motion.section>
-  );
-};
+      </div>
+    </Block>
+  </section>
+);
 
 export default Education;

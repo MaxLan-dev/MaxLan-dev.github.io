@@ -1,278 +1,222 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useAnimation } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp, FaCode, FaGraduationCap, FaBriefcase, FaUser, FaTrophy } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowRight, FaMapMarkerAlt, FaFileAlt } from 'react-icons/fa';
+import { profile } from '../../data/profile';
+import { projects } from '../../data/projects';
+import ProjectCard from '../ProjectCard/ProjectCard';
 import styles from './Home.module.css';
 
-const Home = () => {
-  const controls = useAnimation();
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.5 },
+};
 
-  // Back to Top button visibility
+const RotatingLine = ({ lines }) => {
+  const [i, setI] = useState(0);
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        controls.start({ opacity: 1, y: 0 });
-      } else {
-        controls.start({ opacity: 0, y: 20 });
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [controls]);
+    const id = setInterval(() => setI((n) => (n + 1) % lines.length), 3200);
+    return () => clearInterval(id);
+  }, [lines.length]);
 
   return (
-    <div className={styles.homeContainer}>
-      {/* Hero Section */}
-      <motion.section
-        className={styles.heroSection}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className={styles.heroContent}>
-          <motion.img
-            src="/images/profile.png"
-            alt="Maksym Lan"
-            className={styles.profileImage}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          />
-          <motion.h1
-            className={styles.title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            Welcome to My Personal Page
-          </motion.h1>
-          <motion.p
-            className={styles.subtitle}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            Maksym Lan - Computer Science Graduate | AI, ML & Full Stack Developer
-          </motion.p>
-          <div className={styles.buttonContainer}>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/experience" className={styles.heroButton}>
-                <FaBriefcase /> View Experience
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/projects" className={styles.heroButton}>
-                <FaCode /> View Projects
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/education" className={styles.heroButton}>
-                <FaGraduationCap /> View Education
-              </Link>
-            </motion.div>
-             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/achievements" className={styles.heroButton}>
-                <FaTrophy /> View Achievements
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/resume" className={styles.heroButton}>
-                <FaUser /> View Resume
-              </Link>
-            </motion.div>
+    <div className={styles.terminal} aria-live="polite">
+      <span className={styles.prompt}>$</span>
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.3 }}
+        >
+          {lines[i]}
+        </motion.span>
+      </AnimatePresence>
+      <span className={styles.caret} />
+    </div>
+  );
+};
 
+const Home = () => {
+  const featured = projects.filter((p) => p.featured);
 
+  return (
+    <div className="page">
+      {/* Hero */}
+      <section className={styles.hero}>
+        <motion.div
+          className={styles.heroText}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="eyebrow">{profile.tagline}</span>
+          <h1 className={styles.name}>
+            Hi, I'm <span className="gradient-text">Maksym Lan</span>.
+          </h1>
+          <p className={styles.headline}>{profile.headline}</p>
+          <RotatingLine lines={profile.rotatingLines} />
+
+          <div className={styles.ctas}>
+            <Link to="/projects" className="btn btn-primary">
+              See my work <FaArrowRight />
+            </Link>
+            <Link to="/resume" className="btn btn-ghost">
+              <FaFileAlt /> Resume
+            </Link>
           </div>
+
+          <div className={styles.socials}>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href={`mailto:${profile.email}`} className="icon-link" aria-label="Email">
+              <FaEnvelope />
+            </a>
+            <span className={styles.location}>
+              <FaMapMarkerAlt /> {profile.location}
+            </span>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className={styles.heroSide}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
+          <div className={styles.photoWrap}>
+            <img
+              src={`${process.env.PUBLIC_URL}/images/profile.jpg`}
+              alt="Maksym Lan"
+              className={styles.photo}
+            />
+          </div>
+          <div className={`card ${styles.nowCard}`}>
+            <span className={styles.nowLabel}>
+              <span className={styles.pulse} /> Currently
+            </span>
+            <ul className={styles.nowList}>
+              {profile.currently.map((c) => (
+                <li key={c.org}>
+                  <span className={styles.nowRole}>{c.role}</span>
+                  <span className={styles.nowOrg}>@ {c.org}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Stats */}
+      <motion.section className={styles.stats} {...fadeUp}>
+        {profile.stats.map((s) => (
+          <div key={s.label} className={`card ${styles.stat}`}>
+            <span className={`${styles.statValue} gradient-text`}>{s.value}</span>
+            <span className={styles.statLabel}>{s.label}</span>
+          </div>
+        ))}
+      </motion.section>
+
+      {/* About */}
+      <motion.section className={styles.section} {...fadeUp}>
+        <div className={styles.sectionHead}>
+          <span className="eyebrow">About</span>
+          <h2 className={styles.sectionTitle}>A bit about me</h2>
+        </div>
+        <div className={styles.about}>
+          {profile.about.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </motion.section>
 
-      {/* About Me Section */}
-      <motion.section
-        className={styles.sectionCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <FaUser className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>About Me</h2>
-        <p className={styles.sectionText}>
-          I'm Maksym (Max) Lan, a Computer Science graduate from the University of Manitoba, minoring in Mathematics and Statistics.
-          My passion lies in Machine Learning (ML), and I am excited to apply the university and work knowledge on real world problems. 
-          I am currently working as a Software Developer at Online Business Systems, a co-founder and CEO of GroupBuy, and executive of the UMAI and UMPPC, as well as a former CEO of Prowir and SorbMax. 
-          I've built AI-powered platforms and SaaS applications for startups and I am eager to gain more knowledge in the future.
-        </p>
-        <p className={styles.sectionText}>
-          With my old passion and research background in astrophysics as well as my current leadership roles, I love to work in collaborative environments,
-          mixing knowledge and creative problem-solving. Check out my projects and experiences to see my work in action!
-        </p>
-      </motion.section>
-
-      {/* Technical Skills Section */}
-      <motion.section
-        className={styles.sectionCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <FaCode className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Technical Skills</h2>
-        <div className={styles.skillsGrid}>
-          <div className={styles.skillCategory}>
-            <h3>Programming Languages</h3>
-            <ul className={styles.skillList}>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>Java</li>
-              <li>R</li>
-              <li>TypeScript</li>
-              <li>SQL</li>
-              <li>C++</li>
-            </ul>
+      {/* Featured work */}
+      <motion.section className={styles.section} {...fadeUp}>
+        <div className={styles.sectionHeadRow}>
+          <div>
+            <span className="eyebrow">Selected work</span>
+            <h2 className={styles.sectionTitle}>Things I've built recently</h2>
           </div>
-          <div className={styles.skillCategory}>
-            <h3>AI/ML Tools</h3>
-            <ul className={styles.skillList}>
-              <li>TensorFlow</li>
-              <li>Keras</li>
-              <li>PyTorch</li>
-              <li>Llama-index</li>
-              <li>LangChain</li>
-              <li>Qdrant</li>
-              <li>NumPy</li>
-              <li>Pandas</li>
-            </ul>
-          </div>
-          <div className={styles.skillCategory}>
-            <h3>Full Stack Skills</h3>
-            <ul className={styles.skillList}>
-              <li>Django</li>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>SQLAlchemy</li>
-              <li>HTML/CSS</li>
-              <li>Tailwind CSS</li>
-              <li>Redux</li>
-              <li>.NET / .NET Core</li>
-              <li>ASP.NET Core</li>
-              <li>Angular</li>
-              <li>Vue.js</li>
-            </ul>
-          </div>
-          <div className={styles.skillCategory}>
-            <h3>Cloud & DevOps</h3>
-            <ul className={styles.skillList}>
-              <li>Azure</li>
-              <li>Azure DevOps</li>
-              <li>Azure Data Factory</li>
-              <li>CI/CD</li>
-              <li>ETL</li>
-              <li>Microservices</li>
-              <li>Multi-tenant Architecture</li>
-              <li>Docker</li>
-            </ul>
-          </div>
-          <div className={styles.skillCategory}>
-            <h3>Tools & Soft Skills</h3>
-            <ul className={styles.skillList}>
-              <li>Git</li>
-              <li>Linux</li>
-              <li>LaTeX</li>
-              <li>Software Architecture</li>
-              <li>System Optimization</li>
-              <li>Leadership</li>
-              <li>Teamwork</li>
-              <li>Problem-solving</li>
-            </ul>
-          </div>
+          <Link to="/projects" className={styles.moreLink}>
+            All projects <FaArrowRight />
+          </Link>
+        </div>
+        <div className={styles.projectGrid}>
+          {featured.map((p) => (
+            <ProjectCard key={p.title} project={p} compact />
+          ))}
         </div>
       </motion.section>
 
-      {/* Education Section */}
-      <motion.section
-        className={styles.sectionCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <FaGraduationCap className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Education</h2>
-        <div className={styles.educationItem}>
-          <h3>Bachelor of Computer Science, Minor in Mathematics and Statistics</h3>
-          <p className={styles.educationDetails}>University of Manitoba, Winnipeg, MB | Jan 2023 – Aug 2025</p>
-          <p className={styles.sectionText}>
-            GPA: 3.9/4.5 (Completed a 4 year degree with distinction in 2.5 years by taking 6+ courses a term, mastering AI, ML, and software engineering).
+      {/* What I build */}
+      <motion.section className={styles.section} {...fadeUp}>
+        <div className={styles.sectionHead}>
+          <span className="eyebrow">What I build</span>
+          <h2 className={styles.sectionTitle}>Where I spend my time</h2>
+        </div>
+        <div className={styles.focusGrid}>
+          {profile.focusAreas.map((f, i) => (
+            <div key={f.title} className={`card card-hover ${styles.focus}`}>
+              <span className={styles.focusIndex}>0{i + 1}</span>
+              <h3 className={styles.focusTitle}>{f.title}</h3>
+              <p className={styles.focusBlurb}>{f.blurb}</p>
+              <div className={styles.chips}>
+                {f.stack.map((s) => (
+                  <span key={s} className="chip">{s}</span>
+                ))}
+              </div>
+              <p className={styles.shipped}>
+                <span>Shipped in</span> {f.shippedIn}
+              </p>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Skills */}
+      <motion.section className={styles.section} {...fadeUp}>
+        <div className={styles.sectionHead}>
+          <span className="eyebrow">Toolbox</span>
+          <h2 className={styles.sectionTitle}>Tech I work with</h2>
+        </div>
+        <div className={`card ${styles.skills}`}>
+          {Object.entries(profile.skills).map(([group, items]) => (
+            <div key={group} className={styles.skillRow}>
+              <h3 className={styles.skillGroup}>{group}</h3>
+              <div className={styles.chips}>
+                {items.map((s) => (
+                  <span key={s} className="chip">{s}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Contact */}
+      <motion.section className={`card ${styles.contact}`} {...fadeUp}>
+        <div>
+          <h2 className={styles.contactTitle}>Let's talk</h2>
+          <p className={styles.contactText}>
+            Happy to talk AI, startups, astrophysics, or how to fit four years into two and a half.
           </p>
         </div>
-      </motion.section>
-
-      {/* Professional Experience Section */}
-      <motion.section
-        className={styles.sectionCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <FaBriefcase className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Professional Experience</h2>
-        <p className={styles.sectionText}>
-          Despite relative start of my career, I have already gained quite a bit of software development experience, primarily Full Stack and working on various AI-focused applications.
-          I am currently working as a Software Developer at Online Business Systems, where I lead development and maintenance for multi-tenant applications using .NET, Angular, and Vue.js, architect microservices solutions, and optimize data pipelines with Azure DevOps and Data Factory. I work on AI-powered platforms that enhance system capabilities and drive organizational efficiency.
-          I am also working as a Principal Software Developer at GY Tea, where I architected and developed a full-stack e-commerce platform for a family-run loose leaf tea business. I built the entire platform from scratch using React Router v7, TypeScript, Supabase, and Netlify, including product catalog, shopping cart, secure payment processing, order management, and a complete admin dashboard.
-          Additionally, I am a co-founder and CEO of GroupBuy, an AI-powered SaaS platform that aggregates small food business orders for cost-effective bulk purchases. I lead the full-stack development using Django and modern web technologies, manage the team, and work directly with local businesses to ensure the platform meets their needs. The platform streamlines order aggregation and processing, helping small food businesses reduce costs through intelligent bulk purchasing.
-          Prior to coming to Canada, I was a CEO of Prowir and SorbMax, where I led the development of a new wireless charger type and a startup focused on biodegradable filters, respectively.
-          Check out my experience section for more details on my work.
-        </p>
-        <Link to="/experience" className={styles.sectionButton}>View Full Experience</Link>
-      </motion.section>
-
-      {/* Contact Information Section */}
-      <motion.section
-        className={styles.sectionCard}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <FaEnvelope className={styles.sectionIcon} />
-        <h2 className={styles.sectionTitle}>Contact Information</h2>
-        <div className={styles.contactGrid}>
-          <p className={styles.contactItem}>Winnipeg, MB, Canada</p>
-          <p className={styles.contactItem}>Phone: +1 204 509 1227</p>
-          <p className={styles.contactItem}>
-            Email: <a href="mailto:lanmaksym@gmail.com" className={styles.contactLink}>lanmaksym@gmail.com</a>
-          </p>
-          <p className={styles.contactItem}>
-            LinkedIn: <a href="https://www.linkedin.com/in/maksym-lan/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>linkedin.com/in/maksym-lan</a>
-          </p>
-        </div>
-        <div className={styles.socialLinks}>
-          <a href="https://github.com/MaxLan-dev" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            <FaGithub />
+        <div className={styles.contactActions}>
+          <a href={`mailto:${profile.email}`} className="btn btn-primary">
+            <FaEnvelope /> {profile.email}
           </a>
-          <a href="https://www.linkedin.com/in/maksym-lan/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            <FaLinkedin />
-          </a>
-          <a href="mailto:lanmaksym@gmail.com" className={styles.socialLink}>
-            <FaEnvelope />
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+            <FaLinkedin /> LinkedIn
           </a>
         </div>
       </motion.section>
-
-      {/* Back to Top Button */}
-      <motion.button
-        className={styles.backToTop}
-        animate={controls}
-        initial={{ opacity: 0, y: 20 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <FaArrowUp />
-      </motion.button>
     </div>
   );
 };
